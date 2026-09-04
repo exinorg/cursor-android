@@ -132,11 +132,21 @@ Logo: [`assets/logo.jpg`](./assets/logo.jpg)
 
 ---
 
+## Privacy policy
+
+**Public URL (use this wherever a privacy link is required — AdMob, stores, forms):**  
+**https://cdn.euroapp.site/vibeagent/privacy.html**
+
+Also linked in the app (access screen + Settings).
+
+---
+
 ## Privacy & safety
 
 - Agent and project files run **on your device**.  
 - Models/usage go through **your Cursor account**.  
 - The app itself is **free** (no subscription). Optional rewarded video or a Telegram promo code (**3 free days**) may unlock access time.  
+- Full policy: [cdn.euroapp.site/vibeagent/privacy.html](https://cdn.euroapp.site/vibeagent/privacy.html)  
 - Never share API keys. Rotate if leaked.
 
 ---
