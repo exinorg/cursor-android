@@ -6,5 +6,6 @@ This repository and the **VibeAgent** APK are provided as an **unofficial**, thi
 - Trademarks and product names belong to their respective owners.
 - You must use **your own** Cursor credentials / API keys and comply with Cursor’s Terms of Service.
 - Software is provided **as is**, without warranty. Install unknown APKs only if you trust the source.
+- Privacy policy: https://cdn.euroapp.site/vibeagent/privacy.html
 
 By installing the APK you accept these terms.
