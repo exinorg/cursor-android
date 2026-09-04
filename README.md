@@ -7,6 +7,12 @@
 **Unofficial Cursor AI client for Android.**  
 There is still **no official Cursor app on Android** (Cursor focuses on desktop + iOS). This APK is a **ready-to-run app**: chat with the agent, use your Cursor account, work on projects and preview — **everything needed is packaged with the app** (one first-time setup download on the phone).
 
+### Free — no subscriptions
+
+- The **app is free**. There is **no paid subscription** inside VibeAgent.  
+- You only need **your own Cursor account** (same as desktop) for the AI agent.  
+- Access can use optional rewarded ads **or** a **promo code** from the Telegram channel (**3 free days** per code use on that phone).
+
 > **Not affiliated with Anysphere / Cursor.**  
 > Third-party client. Use your **own** Cursor account / API key. Read the disclaimer below.
 
@@ -16,7 +22,7 @@ There is still **no official Cursor app on Android** (Cursor focuses on desktop 
 
 **Project channel:** [https://t.me/VibeCursorAndroid](https://t.me/VibeCursorAndroid) · [@VibeCursorAndroid](https://t.me/VibeCursorAndroid)
 
-APK updates, login tips, news. Scan the QR:
+APK updates, login tips, news, and the **promo code for 3 free days**. Scan the QR:
 
 <p align="center">
   <a href="https://t.me/VibeCursorAndroid">
@@ -80,7 +86,8 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 - **Live preview** for local web apps  
 - **In-app UI updates** when available  
 - **Fullscreen** + screen rotation  
-- Optional rewarded access gate (see in-app)  
+- **Free app** — no in-app subscription  
+- Optional rewarded access **or** Telegram **promo code** (**3 free days**)  
 
 ---
 
@@ -111,9 +118,11 @@ Same Cursor account as on desktop.
 
 ## Come accedere (italiano)
 
+- **App gratuita**, **senza abbonamenti** in VibeAgent. Serve il tuo account Cursor per l’agent.  
 - **OAuth:** *Continua con Cursor* → login Cursor → torna in app (o *Copia link*).  
 - **API key:** [Dashboard API Keys](https://cursor.com/dashboard/api?section=user-keys) → incolla in app.  
-- **Setup:** la prima volta l’app installa i componenti inclusi (~290 MB). Poi lavori sul telefono.
+- **Setup:** la prima volta l’app installa i componenti inclusi (~290 MB). Poi lavori sul telefono.  
+- **3 giorni gratis:** entra nel [canale Telegram](https://t.me/VibeCursorAndroid), prendi il **codice promo** e inseriscilo in app (schermata accesso).
 
 ---
 
@@ -127,7 +136,7 @@ Logo: [`assets/logo.jpg`](./assets/logo.jpg)
 
 - Agent and project files run **on your device**.  
 - Models/usage go through **your Cursor account**.  
-- Some builds use rewarded video for daily access — check the app.  
+- The app itself is **free** (no subscription). Optional rewarded video or a Telegram promo code (**3 free days**) may unlock access time.  
 - Never share API keys. Rotate if leaked.
 
 ---
