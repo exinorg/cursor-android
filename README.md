@@ -12,6 +12,22 @@ There is still **no official Cursor app on Android** (Cursor focuses on desktop 
 
 ---
 
+## Community — Telegram
+
+**Canale ufficiale del progetto:** [https://t.me/VibeCursorAndroid](https://t.me/VibeCursorAndroid) · [@VibeCursorAndroid](https://t.me/VibeCursorAndroid)
+
+Aggiornamenti APK, guide login, news. Scansiona il QR:
+
+<p align="center">
+  <a href="https://t.me/VibeCursorAndroid">
+    <img src="assets/qr-telegram.jpg" alt="QR code Telegram @VibeCursorAndroid — Cursor Android unofficial" width="280" />
+  </a>
+</p>
+
+<p align="center"><b><a href="https://t.me/VibeCursorAndroid">Join Telegram → t.me/VibeCursorAndroid</a></b></p>
+
+---
+
 ## Why this exists (SEO / search)
 
 People search for:
