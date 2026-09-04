@@ -7,18 +7,20 @@
 1. Tap **Continue with Cursor**.
 2. Sign in with the same account you use on [cursor.com](https://cursor.com).
 3. Approve access and return to the app.
-4. If the WebView/browser stalls: use **Copy link** and open it in Chrome, then return.
+4. If the browser stalls: **Copy link** → open in Chrome → return.
 
 ### API key
 
 1. Open [Dashboard → API Keys](https://cursor.com/dashboard/api?section=user-keys).
 2. Create a key → copy it.
 3. In VibeAgent: paste → **Sign in with API key**.
-4. Keep the key secret (same power as your account session).
+4. Keep the key secret.
 
-### First-run Linux environment
+### First-time setup
 
-After auth, install the on-device rootfs (~290 MB). Prefer Wi‑Fi. Local file in `Download/cursor` skips CDN when present.
+After login the app may install its **included on-device pack** (~290 MB, once). Prefer Wi‑Fi. Then create a project and chat.
+
+Community: [t.me/VibeCursorAndroid](https://t.me/VibeCursorAndroid)
 
 ---
 
@@ -32,8 +34,10 @@ After auth, install the on-device rootfs (~290 MB). Prefer Wi‑Fi. Local file i
 ### API key
 
 1. [Dashboard API Keys](https://cursor.com/dashboard/api?section=user-keys)  
-2. Incolla la chiave in app → **Entra con API key**.
+2. Incolla in app → **Entra con API key**.
 
-### Ambiente Linux
+### Setup iniziale
 
-Prima volta: ~290 MB. Poi l’agent gira sul telefono.
+Prima volta: l’app installa i componenti già previsti (~290 MB). Poi l’agent e i progetti restano sul telefono.
+
+Canale: [t.me/VibeCursorAndroid](https://t.me/VibeCursorAndroid)
