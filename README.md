@@ -5,7 +5,7 @@
 </p>
 
 **Unofficial Cursor AI client for Android.**  
-There is still **no official Cursor app on Android** (Cursor focuses on desktop + iOS). This APK brings a **Cursor Agent–style coding chat** to your phone: login with your Cursor account, run the agent locally, edit projects, preview apps.
+There is still **no official Cursor app on Android** (Cursor focuses on desktop + iOS). This APK is a **ready-to-run app**: chat with the agent, use your Cursor account, work on projects and preview — **everything needed is packaged with the app** (one first-time setup download on the phone).
 
 > **Not affiliated with Anysphere / Cursor.**  
 > Third-party client. Use your **own** Cursor account / API key. Read the disclaimer below.
@@ -14,9 +14,9 @@ There is still **no official Cursor app on Android** (Cursor focuses on desktop 
 
 ## Community — Telegram
 
-**Canale ufficiale del progetto:** [https://t.me/VibeCursorAndroid](https://t.me/VibeCursorAndroid) · [@VibeCursorAndroid](https://t.me/VibeCursorAndroid)
+**Project channel:** [https://t.me/VibeCursorAndroid](https://t.me/VibeCursorAndroid) · [@VibeCursorAndroid](https://t.me/VibeCursorAndroid)
 
-Aggiornamenti APK, guide login, news. Scansiona il QR:
+APK updates, login tips, news. Scan the QR:
 
 <p align="center">
   <a href="https://t.me/VibeCursorAndroid">
@@ -36,7 +36,7 @@ People search for:
 - **Cursor AI APK**
 - **Cursor agent on Android phone**
 - **Cursor alternative Android** (no official Play Store app yet)
-- **AI coding assistant Android** like Cursor / Claude Code on mobile
+- **AI coding assistant Android** like Cursor on mobile
 
 Official Cursor today is mainly **desktop** and **iOS**. This project ships an **Android APK** so you can use Cursor-powered agent workflows on your phone.
 
@@ -46,10 +46,10 @@ Official Cursor today is mainly **desktop** and **iOS**. This project ships an *
 
 | File | Notes |
 |------|--------|
-| [`VibeAgent.apk`](./VibeAgent.apk) | Debug build — install on Android 10+ (arm64 recommended) |
+| [`VibeAgent.apk`](./VibeAgent.apk) | Install on Android 10+ (arm64 recommended) |
 
-1. Copy `VibeAgent.apk` to the phone (or open this repo on the device).
-2. Allow **Install unknown apps** for your file manager / browser.
+1. Copy `VibeAgent.apk` to the phone (or open this repo on the device).  
+2. Allow **Install unknown apps** for your file manager / browser.  
 3. Install → open **VibeAgent**.
 
 ---
@@ -58,29 +58,29 @@ Official Cursor today is mainly **desktop** and **iOS**. This project ships an *
 
 | Requirement | Detail |
 |-------------|--------|
-| Android | **10+** (API 29+). **arm64** device |
-| RAM | **8 GB+** strongly recommended (Linux rootfs + agent) |
-| Storage | **~1–2 GB** free (APK ~18 MB + first-time Linux environment ~290 MB) |
-| Network | Needed for Cursor login, models, first download |
-| Account | **Your** Cursor account (Pro/usage as on cursor.com) |
+| Android | **10+** (API 29+), **arm64** |
+| RAM | **8 GB+** recommended |
+| Storage | **~1–2 GB** free (APK ~18 MB + one-time on-device components ~290 MB) |
+| Network | For Cursor login, models, and first setup |
+| Account | **Your** Cursor account ([cursor.com](https://cursor.com)) |
 
-First launch downloads a **local Linux environment** (rootfs slim ~290 MB) so the agent can run on-device. After that, much of the work stays on the phone.
+On first launch the app installs its **built-in runtime pack** on the device (~290 MB, once). After that the agent and your projects stay **on the phone**.
 
 ---
 
 ## Features
 
-- **Chat agent** in the style of Cursor / Claude mobile UIs  
+- **Chat agent** (Cursor-style mobile UI)  
 - **Login**: OAuth “Continue with Cursor” **or** API key  
-- **Models** picker (account models / `/model`)  
-- **Modes**: Plan / Ask / Run Everything (force)  
+- **Models** picker (`/model`)  
+- **Modes**: Plan / Ask / Run Everything  
 - **Slash commands** (`/usage`, `/help`, `/mcp`, `/summarize`, …)  
-- **Projects** on device + optional folder picker (SAF)  
-- **File tree** + read / ZIP export  
-- **Live preview** for `localhost` / Node / static HTML  
-- **OTA UI** updates from CDN  
-- **Fullscreen** immersive UI  
-- Ads-gated daily access on some builds (rewarded video) — see in-app  
+- **Projects** on device + folder picker  
+- **Files** tree, read, ZIP export  
+- **Live preview** for local web apps  
+- **In-app UI updates** when available  
+- **Fullscreen** + screen rotation  
+- Optional rewarded access gate (see in-app)  
 
 ---
 
@@ -89,66 +89,65 @@ First launch downloads a **local Linux environment** (rootfs slim ~290 MB) so th
 ### Option A — Continue with Cursor (OAuth)
 
 1. Open the app → **Continua con Cursor**.  
-2. Complete login in the browser / system flow.  
-3. Return to the app when asked.  
-4. If the browser fails: use **Copia link** / open the auth URL manually.
+2. Sign in in the browser / system flow.  
+3. Return to the app.  
+4. If it stalls: **Copia link** and open it in Chrome.
 
-Works best with a normal Cursor subscription on the same account you use on desktop.
+Same Cursor account as on desktop.
 
 ### Option B — API key
 
 1. Create a key: [Cursor Dashboard → API Keys](https://cursor.com/dashboard/api?section=user-keys)  
-2. In the app: paste the key → **Entra con API key**.  
-3. Do **not** share the key. One key per person.
+2. In the app: paste → **Entra con API key**.  
+3. Do **not** share the key.
 
 ### After login
 
-1. Install / continue the **Linux environment** if prompted (~290 MB, once).  
+1. Finish the **one-time setup** if the app asks (~290 MB, Wi‑Fi recommended).  
 2. Create or open a **project**.  
-3. Chat like on Cursor: ask for code, fixes, previews.
+3. Chat like on Cursor: code, fixes, previews.
 
 ---
 
 ## Come accedere (italiano)
 
-- **OAuth:** pulsante *Continua con Cursor* → login sul sito Cursor → torna in app.  
-- **API key:** crea la chiave sul [dashboard Cursor](https://cursor.com/dashboard/api?section=user-keys) → incolla in app.  
-- **Ambiente:** al primo avvio scarichi il rootfs (~290 MB). Poi lavori offline quanto permette la rete/modello.
+- **OAuth:** *Continua con Cursor* → login Cursor → torna in app (o *Copia link*).  
+- **API key:** [Dashboard API Keys](https://cursor.com/dashboard/api?section=user-keys) → incolla in app.  
+- **Setup:** la prima volta l’app installa i componenti inclusi (~290 MB). Poi lavori sul telefono.
 
 ---
 
-## Screenshots / brand
+## Brand
 
-Logo bundled: [`assets/logo.jpg`](./assets/logo.jpg) (Vibe / Cursor branding for this unofficial client).
+Logo: [`assets/logo.jpg`](./assets/logo.jpg)
 
 ---
 
 ## Privacy & safety
 
-- Agent and files run **on your device** (proot Linux), not on our shared coding servers.  
-- You authenticate with **Cursor’s** services for models/usage.  
-- Unofficial builds may include **AdMob rewarded** access gates — check the screen in the app.  
-- Never commit API keys to git. Rotate a key if it leaks.
+- Agent and project files run **on your device**.  
+- Models/usage go through **your Cursor account**.  
+- Some builds use rewarded video for daily access — check the app.  
+- Never share API keys. Rotate if leaked.
 
 ---
 
 ## Disclaimer
 
-**VibeAgent / this repository is an unofficial, independent project.**  
-It is **not** an official product of Cursor, Anysphere, or related companies.  
-“Cursor” is used only to describe compatibility with the Cursor account / agent ecosystem.  
-Use at your own risk. Respect Cursor’s Terms of Service and usage limits.
+**VibeAgent / this repository is unofficial and independent.**  
+Not a product of Cursor / Anysphere.  
+“Cursor” only describes account/agent compatibility.  
+Use at your own risk and respect Cursor’s Terms of Service.
 
 ---
 
-## Support / status
+## Support
 
-- Private preview while we polish UX and packaging.  
-- When public: star the repo and open Issues for Android-specific bugs.  
-- Related site assets may live under `cdn.euroapp.site` (UI OTA) — separate from this APK-only repo.
+- **Telegram:** [t.me/VibeCursorAndroid](https://t.me/VibeCursorAndroid)  
+- Private preview for now; Issues when the repo goes public.
 
 ---
 
 ## Keywords
 
-`Cursor Android`, `Cursor AI Android APK`, `Cursor for Android unofficial`, `AI coding Android`, `Cursor agent mobile`, `Cursor iOS vs Android`, `VibeAgent`, `run Cursor on phone`
+`Cursor Android`, `Cursor AI Android APK`, `Cursor for Android unofficial`, `AI coding Android`, `Cursor agent mobile`, `Cursor iOS vs Android`, `VibeAgent`, `VibeCursorAndroid`, `Telegram Cursor Android`, `run Cursor on phone`
