@@ -1,0 +1,8 @@
+# Ignore local junk — keep repo APK-only (+ docs/logo)
+*.apk.bak
+.DS_Store
+.env
+.env.*
+*.secret
+rootfs*.tar.gz
+runtime*.tar.gz
