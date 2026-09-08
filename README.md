@@ -76,19 +76,26 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 
 ## Features
 
-- **Chat agent** (Cursor-style mobile UI)  
+- **Chat agent** (Cursor-style mobile UI) — **BETA** badge on home  
+- **Multi-account Cursor**: log in with **2+ accounts** (OAuth and/or API key), switch anytime from the menu / login screen  
 - **Login**: OAuth “Continue with Cursor” **or** API key  
-- **Models** picker (`/model`)  
-- **Modes**: Plan / Ask / Run Everything  
-- **Slash commands** (`/usage`, `/help`, `/mcp`, `/summarize`, …)  
-- **Projects** on device + folder picker  
+- **Models** picker (`/model`, including Auto)  
+- **Modes**: Normal / Plan / Ask + **Run Everything**  
+- **Agent view**: **Silent** (compact) or **CLI** (terminal-style bar: model, usage %, files edited, Run Everything, tool activity like Grepping…) — toggles in Settings  
+- **Slash commands** (`/usage`, `/help`, `/mcp`, `/memory`, `/summarize`, `/run-everything`, …)  
+- **Projects** on device + folder picker + **HTML templates** starter  
 - **Files** tree, read, ZIP export  
-- **Live preview** for local web apps  
+- **Publish** project to a public HTTPS URL (CDN)  
+- **Live preview** for local web apps (split landscape / overlay, live reload option)  
+- **Git** (remote URL + token, clone / push / pull)  
+- **MCP** servers list (read-only from Cursor CLI)  
+- **User memory** (facts the agent follows across chats)  
 - **Clipboard manager** — save / reuse anything you copy-paste (codes, snippets, API keys, promo codes, links…)  
-- **In-app UI updates** when available  
-- **Fullscreen** + screen rotation  
+- **Home-screen notes** widget (quick notes)  
+- **In-app UI updates** (OTA) when available  
+- **Fullscreen** + screen rotation lock options  
 - **Free app** — no in-app subscription  
-- Optional rewarded access **or** Telegram **promo code** (**3 free days**)  
+- Optional rewarded ads **or** Telegram **promo code** (**3 free days**)  
 
 ---
 
@@ -96,24 +103,42 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 
 ### Option A — Continue with Cursor (OAuth)
 
-1. Open the app → **Continua con Cursor**.  
+1. Open the app → **Continue with Cursor**.  
 2. Sign in in the browser / system flow.  
 3. Return to the app.  
-4. If it stalls: **Copia link** and open it in Chrome.
+4. If it stalls: **Copy link** and open it in Chrome.
 
 Same Cursor account as on desktop.
 
 ### Option B — API key
 
 1. Create a key: [Cursor Dashboard → API Keys](https://cursor.com/dashboard/api?section=user-keys)  
-2. In the app: paste → **Entra con API key**.  
+2. In the app: paste → **Sign in with API key**.  
 3. Do **not** share the key.
+
+### Two or more accounts
+
+1. Menu → **Add Cursor account** (or Settings → Cursor accounts).  
+2. Add another login (OAuth or API key).  
+3. Switch account from the list on the login screen or in the Agent menu — no reinstall needed.
 
 ### After login
 
 1. Finish the **one-time setup** if the app asks (~290 MB, Wi‑Fi recommended).  
-2. Create or open a **project**.  
-3. Chat like on Cursor: code, fixes, previews.
+2. Create or open a **project** (optional: start from a **template**).  
+3. Chat like on Cursor: code, fixes, previews.  
+4. Optional: Settings → **Agent view** → **CLI** for a Cursor-CLI-style status bar (model, usage %, files edited, Run Everything, Grepping…).
+
+### Getting access (English)
+
+- The **app is free** — no VibeAgent subscription. You need **your** Cursor account for the agent.  
+- **OAuth:** *Continue with Cursor* → Cursor login → back to the app (or *Copy link*).  
+- **API key:** [Dashboard API Keys](https://cursor.com/dashboard/api?section=user-keys) → paste in the app.  
+- **Multiple accounts:** sign in with **2+ Cursor accounts** (OAuth and/or API key) and switch from *Add Cursor account* / the account list.  
+- **Setup:** first launch installs the bundled runtime (~290 MB). Then you work on the phone.  
+- **3 free days:** join the [Telegram channel](https://t.me/VibeCursorAndroid), get the **promo code**, enter it on the access screen.  
+- **Clipboard / notes:** in-app clipboard manager — save and reuse everything you copy/paste (codes, snippets, keys, promo codes, links).  
+- **New options:** agent view Silent/CLI, Run Everything, Plan/Ask, HTML templates, Publish to the web, Git, MCP, user memory, live preview, notes widget, OTA UI updates.
 
 ---
 
@@ -122,9 +147,11 @@ Same Cursor account as on desktop.
 - **App gratuita**, **senza abbonamenti** in VibeAgent. Serve il tuo account Cursor per l’agent.  
 - **OAuth:** *Continua con Cursor* → login Cursor → torna in app (o *Copia link*).  
 - **API key:** [Dashboard API Keys](https://cursor.com/dashboard/api?section=user-keys) → incolla in app.  
+- **Più account:** puoi entrare con **2+ account Cursor** (OAuth e/o API key) e cambiare dal menu *Aggiungi account* / lista account.  
 - **Setup:** la prima volta l’app installa i componenti inclusi (~290 MB). Poi lavori sul telefono.  
 - **3 giorni gratis:** entra nel [canale Telegram](https://t.me/VibeCursorAndroid), prendi il **codice promo** e inseriscilo in app (schermata accesso).  
-- **Clipboard / annotazioni:** gestore clipboard in-app — salva e riusa tutti i pezzi che copi/incolli (codici, snippet, chiavi, promo, link).
+- **Clipboard / annotazioni:** gestore clipboard in-app — salva e riusa tutti i pezzi che copi/incolli (codici, snippet, chiavi, promo, link).  
+- **Nuove opzioni:** vista agent Silent/CLI, Run Everything, Plan/Ask, template HTML, Pubblica sul web, Git, MCP, memoria utente, anteprima live, widget note, aggiornamenti UI OTA.
 
 ---
 
