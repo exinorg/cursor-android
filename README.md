@@ -89,7 +89,7 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 - **Live preview** for local web apps (split landscape / overlay, live reload option)  
 - **Git** (remote URL + token, clone / push / pull)  
 - **MCP** servers list (read-only from Cursor CLI)  
-- **User memory** (facts the agent follows across chats)  
+- **Persistent user memory** (not a full Hermes stack): profile + facts + episodes, injected every turn, synced to `MEMORY.md` in the project; `/memory` in chat; Settings → Memory. Survives new chats so the agent does not start from zero. Say “remember that…” or add facts in Settings.  
 - **Clipboard manager** — save / reuse anything you copy-paste (codes, snippets, API keys, promo codes, links…)  
 - **Home-screen notes** widget (quick notes)  
 - **In-app UI updates** (OTA) when available  
@@ -138,7 +138,8 @@ Same Cursor account as on desktop.
 - **Setup:** first launch installs the bundled runtime (~290 MB). Then you work on the phone.  
 - **3 free days:** join the [Telegram channel](https://t.me/VibeCursorAndroid), get the **promo code**, enter it on the access screen.  
 - **Clipboard / notes:** in-app clipboard manager — save and reuse everything you copy/paste (codes, snippets, keys, promo codes, links).  
-- **New options:** agent view Silent/CLI, Run Everything, Plan/Ask, HTML templates, Publish to the web, Git, MCP, user memory, live preview, notes widget, OTA UI updates.
+- **Memory:** persistent facts/episodes + `MEMORY.md` (Settings → Memory, `/memory`, “remember that…”). Not a full Hermes agent — lightweight so it fits on phone.  
+- **New options:** agent view Silent/CLI, Run Everything, Plan/Ask, HTML templates, Publish to the web, Git, MCP, live preview, notes widget, OTA UI updates.
 
 ---
 
@@ -151,7 +152,8 @@ Same Cursor account as on desktop.
 - **Setup:** la prima volta l’app installa i componenti inclusi (~290 MB). Poi lavori sul telefono.  
 - **3 giorni gratis:** entra nel [canale Telegram](https://t.me/VibeCursorAndroid), prendi il **codice promo** e inseriscilo in app (schermata accesso).  
 - **Clipboard / annotazioni:** gestore clipboard in-app — salva e riusa tutti i pezzi che copi/incolli (codici, snippet, chiavi, promo, link).  
-- **Nuove opzioni:** vista agent Silent/CLI, Run Everything, Plan/Ask, template HTML, Pubblica sul web, Git, MCP, memoria utente, anteprima live, widget note, aggiornamenti UI OTA.
+- **Memoria persistente:** fatti/episodi + `MEMORY.md` (Impostazioni → Memoria, `/memory`, «ricorda che…»). Non è Hermes completo — leggera, resta sul telefono tra una chat e l’altra.  
+- **Nuove opzioni:** vista agent Silent/CLI, Run Everything, Plan/Ask, template HTML, Pubblica sul web, Git, MCP, anteprima live, widget note, aggiornamenti UI OTA.
 
 ---
 
