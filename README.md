@@ -123,7 +123,8 @@ Same Cursor account as on desktop.
 - **OAuth:** *Continua con Cursor* → login Cursor → torna in app (o *Copia link*).  
 - **API key:** [Dashboard API Keys](https://cursor.com/dashboard/api?section=user-keys) → incolla in app.  
 - **Setup:** la prima volta l’app installa i componenti inclusi (~290 MB). Poi lavori sul telefono.  
-- **3 giorni gratis:** entra nel [canale Telegram](https://t.me/VibeCursorAndroid), prendi il **codice promo** e inseriscilo in app (schermata accesso).
+- **3 giorni gratis:** entra nel [canale Telegram](https://t.me/VibeCursorAndroid), prendi il **codice promo** e inseriscilo in app (schermata accesso).  
+- **Clipboard / annotazioni:** gestore clipboard in-app — salva e riusa tutti i pezzi che copi/incolli (codici, snippet, chiavi, promo, link).
 
 ---
 
