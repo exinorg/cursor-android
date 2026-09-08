@@ -76,13 +76,14 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 
 ## Features
 
-- **Chat agent** (Cursor-style mobile UI) — **BETA** badge on home  
-- **App language** — default **English**; chips 🇬🇧 EN / 🇮🇹 IT / 🌐 **System** (follows the phone) + full language list on **install**, **login**, **Settings** and the **☰ menu**. The agent replies in the language you picked.  
+- **Chat agent** (Cursor-style mobile UI) — **BETA** on home + ☰ menu (not in chat)  
+- **App language** — default **Automatic** (phone locale); chips 🌐 Auto / 🇬🇧 EN / 🇮🇹 IT + full list on **install**, **login**, **Settings** and the **☰ menu**. The agent replies in that language.  
 - **Multi-account Cursor**: log in with **2+ accounts** (OAuth and/or API key), switch anytime from the menu / login screen  
 - **Login**: OAuth “Continue with Cursor” **or** API key  
 - **Models** picker (`/model`, including Auto)  
 - **Modes**: Normal / Plan / Ask + **Run Everything**  
-- **Agent view**: **Silent** (compact) or **CLI** (terminal-style bar: model, usage %, files edited, Run Everything, tool activity like Grepping…) — toggles in Settings  
+- **Agent view**: **Lite** (light chat) or **CLI** (terminal-style bar) — header toggle + Settings  
+- **Checkpoint / restore** project snapshots from the File menu  
 - **Slash commands** (`/usage`, `/help`, `/mcp`, `/memory`, `/summarize`, `/run-everything`, …)  
 - **Projects** on device + folder picker + **HTML templates** starter  
 - **Files** tree, read, ZIP export  
@@ -104,12 +105,13 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 
 | Item | Detail |
 |------|--------|
-| **Language** | Default English; EN / IT / System + full list (install, login, Settings, ☰). Agent follows selection. |
-| **Chat backgrounds** | Buttons no longer clipped; picker sheet scrolls; clearer backgrounds over bubbles. |
-| **BETA** | Badge above logo / top icons. |
-| **Memory + CLI view** | Stronger project memory; Silent vs CLI in Settings. |
+| **Language** | Default **Automatic** (device locale); EN / IT + full list (install, login, Settings, ☰). |
+| **Lite ↔ CLI** | Header button switches light chat vs terminal view. |
+| **BETA** | Home + menu only (removed from chat header). |
+| **Chat backgrounds** | Picker fixed; sheet scrolls; clearer over bubbles. |
+| **Site** | [vibecursor.euroapp.site](https://vibecursor.euroapp.site) — rotating phone demo of real app flows. |
 
-In the app: **Menu → Update UI** to pull the latest OTA without reinstalling the APK.
+In the app: **Menu → Update UI** to pull the latest OTA (**20260908c9**) without reinstalling the APK.
 
 Site: [vibecursor.euroapp.site](https://vibecursor.euroapp.site)
 
@@ -153,7 +155,7 @@ Same Cursor account as on desktop.
 - **3 free days:** join the [Telegram channel](https://t.me/VibeCursorAndroid), get the **promo code**, enter it on the access screen.  
 - **Clipboard / notes:** in-app clipboard manager — save and reuse everything you copy/paste (codes, snippets, keys, promo codes, links).  
 - **Memory:** persistent facts/episodes + `MEMORY.md` (Settings → Memory, `/memory`, “remember that…”). Not a full Hermes agent — lightweight so it fits on phone.  
-- **New options:** **app language** (default EN; IT / System / full list in menu), agent view Silent/CLI, Run Everything, Plan/Ask, HTML templates, Publish to the web, Git, MCP, live preview, notes widget, OTA UI updates.
+- **New options:** **app language** (default Automatic / phone locale; EN / IT / full list in menu), Lite↔CLI header toggle, Run Everything, Plan/Ask, Checkpoint, HTML templates, Publish, Git, MCP, live preview, notes widget, OTA UI updates.
 
 ---
 
@@ -167,7 +169,7 @@ Same Cursor account as on desktop.
 - **3 giorni gratis:** entra nel [canale Telegram](https://t.me/VibeCursorAndroid), prendi il **codice promo** e inseriscilo in app (schermata accesso).  
 - **Clipboard / annotazioni:** gestore clipboard in-app — salva e riusa tutti i pezzi che copi/incolli (codici, snippet, chiavi, promo, link).  
 - **Memoria persistente:** fatti/episodi + `MEMORY.md` (Impostazioni → Memoria, `/memory`, «ricorda che…»). Non è Hermes completo — leggera, resta sul telefono tra una chat e l’altra.  
-- **Nuove opzioni:** **lingua app** (default inglese; IT / Sistema / lista completa nel menu ☰), vista agent Silent/CLI, Run Everything, Plan/Ask, template HTML, Pubblica sul web, Git, MCP, anteprima live, widget note, aggiornamenti UI OTA.
+- **Nuove opzioni:** **lingua app** (default Automatica = telefono; EN / IT / lista nel menu ☰), toggle Lite↔CLI in header, Run Everything, Plan/Ask, Checkpoint, template HTML, Pubblica, Git, MCP, anteprima live, widget note, OTA.
 
 ---
 
