@@ -77,6 +77,7 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 ## Features
 
 - **Chat agent** (Cursor-style mobile UI) — **BETA** badge on home  
+- **App language** — default **English**; chips 🇬🇧 EN / 🇮🇹 IT / 🌐 **System** (follows the phone) + full language list on **install**, **login**, **Settings** and the **☰ menu**. The agent replies in the language you picked.  
 - **Multi-account Cursor**: log in with **2+ accounts** (OAuth and/or API key), switch anytime from the menu / login screen  
 - **Login**: OAuth “Continue with Cursor” **or** API key  
 - **Models** picker (`/model`, including Auto)  
@@ -98,6 +99,19 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 - Optional rewarded ads **or** Telegram **promo code** (**3 free days**)  
 
 ---
+
+## What's new (UI OTA)
+
+| Item | Detail |
+|------|--------|
+| **Language** | Default English; EN / IT / System + full list (install, login, Settings, ☰). Agent follows selection. |
+| **Chat backgrounds** | Buttons no longer clipped; picker sheet scrolls; clearer backgrounds over bubbles. |
+| **BETA** | Badge above logo / top icons. |
+| **Memory + CLI view** | Stronger project memory; Silent vs CLI in Settings. |
+
+In the app: **Menu → Update UI** to pull the latest OTA without reinstalling the APK.
+
+Site: [vibecursor.euroapp.site](https://vibecursor.euroapp.site)
 
 ## How to log in
 
@@ -139,7 +153,7 @@ Same Cursor account as on desktop.
 - **3 free days:** join the [Telegram channel](https://t.me/VibeCursorAndroid), get the **promo code**, enter it on the access screen.  
 - **Clipboard / notes:** in-app clipboard manager — save and reuse everything you copy/paste (codes, snippets, keys, promo codes, links).  
 - **Memory:** persistent facts/episodes + `MEMORY.md` (Settings → Memory, `/memory`, “remember that…”). Not a full Hermes agent — lightweight so it fits on phone.  
-- **New options:** agent view Silent/CLI, Run Everything, Plan/Ask, HTML templates, Publish to the web, Git, MCP, live preview, notes widget, OTA UI updates.
+- **New options:** **app language** (default EN; IT / System / full list in menu), agent view Silent/CLI, Run Everything, Plan/Ask, HTML templates, Publish to the web, Git, MCP, live preview, notes widget, OTA UI updates.
 
 ---
 
@@ -153,7 +167,7 @@ Same Cursor account as on desktop.
 - **3 giorni gratis:** entra nel [canale Telegram](https://t.me/VibeCursorAndroid), prendi il **codice promo** e inseriscilo in app (schermata accesso).  
 - **Clipboard / annotazioni:** gestore clipboard in-app — salva e riusa tutti i pezzi che copi/incolli (codici, snippet, chiavi, promo, link).  
 - **Memoria persistente:** fatti/episodi + `MEMORY.md` (Impostazioni → Memoria, `/memory`, «ricorda che…»). Non è Hermes completo — leggera, resta sul telefono tra una chat e l’altra.  
-- **Nuove opzioni:** vista agent Silent/CLI, Run Everything, Plan/Ask, template HTML, Pubblica sul web, Git, MCP, anteprima live, widget note, aggiornamenti UI OTA.
+- **Nuove opzioni:** **lingua app** (default inglese; IT / Sistema / lista completa nel menu ☰), vista agent Silent/CLI, Run Everything, Plan/Ask, template HTML, Pubblica sul web, Git, MCP, anteprima live, widget note, aggiornamenti UI OTA.
 
 ---
 
