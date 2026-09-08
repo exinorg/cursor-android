@@ -84,6 +84,7 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 - **Projects** on device + folder picker  
 - **Files** tree, read, ZIP export  
 - **Live preview** for local web apps  
+- **Clipboard manager** — save / reuse anything you copy-paste (codes, snippets, API keys, promo codes, links…)  
 - **In-app UI updates** when available  
 - **Fullscreen** + screen rotation  
 - **Free app** — no in-app subscription  
