@@ -200,4 +200,4 @@ Use at your own risk and respect Cursor’s Terms of Service.
 
 ## Keywords
 
-`Cursor Android`, `Cursor AI Android APK`, `Cursor for Android unofficial`, `AI coding Android`, `Cursor agent mobile`, `Cursor iOS vs Android`, `VibeAgent`, `VibeCursorAndroid`, `Telegram Cursor Android`, `run Cursor on phone`
+`Cursor Android`, `Cursor for Android`, `Cursor AI Android APK`, `Cursor on phone`, `Cursor mobile`, `run Cursor on Android`, `vibe coding Android`, `vibe coder phone`, `Bolt.new alternative mobile`, `Lovable`, `v0`, `Replit Agent`, `Windsurf`, `Claude Code`, `AI coding Android`, `Cursor agent mobile`, `VibeAgent`, `VibeCursorAndroid`, `Telegram Cursor Android`
