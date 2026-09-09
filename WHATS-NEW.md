@@ -1,25 +1,21 @@
 # What's new (VibeAgent / VibeCursor)
 
-Synced with UI OTA **20260909a2** · APK **1.0.4** · https://vibecursor.euroapp.site
+Synced with UI OTA **20260909a10** · APK **1.0.7** · https://vibecursor.euroapp.site
 
-## Agent update (needs APK reinstall)
-- APK **1.0.4**: after **Update agent**, the app uses the new binary under `~/.local` (before it kept launching the old `/opt` copy and asked to update again)
+## Needs APK reinstall (1.0.7)
+- **Linux system**: Settings → Sistema Linux — save personal root snapshot, restore, delete, or **factory reset**
+- Projects stay outside the root (not wiped by factory reset)
+- Snapshots stored under `Download/cursor/root-snaps`
 
-## Language
-- **English** (and other languages): menu, daily access screen, and update banners now translate
-- Chips: 🌐 Automatic / 🇬🇧 EN / 🇮🇹 IT
+## UI OTA (Controlla UI / Update UI)
+- **App lock**: optional password at launch; 🔒 in the header opens Settings (lock block on top)
+- **Language** only in Settings (removed from splash / login / setup / menu)
+- **Preview tabs**: closing preview keeps tabs; reopen 👁 restores them
+- Workspace delete / wipe: APK **1.0.6+** (Normal mode `--force`, File → wipe)
 
-## Chat / UI
-- Cursor agent update banner **closes by itself** after update (no stuck «Update» bar)
-- Ad blocker: hard stop — you cannot enter chat while a blocker is detected (even with a valid day)
-- Update banner / buttons stay on screen (no overflow)
+## Earlier
+- Agent update path fix (1.0.4), i18n menus, ad-blocker hard stop, CLI / preview polish
 
-## Access / ads
-- Clear ad-blocker copy; rewarded unlock with SSV fallback when needed
-
-## Preview / CLI (earlier)
-- **↻ Refresh** on the preview bar · **↻ Rilancia** on messages · CLI live transcript · red update dot on ☰
-
-In the app: **Menu → Update UI** for OTA. **Reinstall this APK** for 1.0.4 Java fixes.
+In the app: **Menu → Update UI** for OTA. **Reinstall this APK** for 1.0.7 Linux backup / factory reset.
 
 Download APK: this repo · Site: https://vibecursor.euroapp.site · Telegram: https://t.me/VibeCursorAndroid
