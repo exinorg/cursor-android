@@ -4,15 +4,6 @@
   <img src="assets/logo.jpg" alt="VibeAgent — unofficial Cursor AI for Android logo" width="180" height="180" />
 </p>
 
-<p align="center">
-  <img src="assets/bg/sfo1.jpg" alt="Chat background 1" width="120" />
-  <img src="assets/bg/sfo2.jpg" alt="Chat background 2" width="120" />
-  <img src="assets/bg/sfo3.jpg" alt="Chat background 3" width="120" />
-  <img src="assets/bg/sfo4.jpg" alt="Chat background 4" width="120" />
-</p>
-
-**Brand & UI images** synced from the live domain (`vibecursor.euroapp.site` / `cdn.euroapp.site`): logo, OG, app icons, chat backgrounds.
-
 **Unofficial Cursor AI client for Android.**  
 There is still **no official Cursor app on Android** (Cursor focuses on desktop + iOS). This APK is a **ready-to-run app**: chat with the agent, use your Cursor account, work on projects and preview — **everything needed is packaged with the app** (one first-time setup download on the phone).
 
