@@ -109,7 +109,7 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 | **Lite ↔ CLI** | Header button switches light chat vs terminal view. |
 | **BETA** | Home + menu only (removed from chat header). |
 | **Chat backgrounds** | Picker fixed; sheet scrolls; clearer over bubbles. |
-| **Site** | [vibecursor.euroapp.site](https://vibecursor.euroapp.site) — rotating phone demo of real app flows. |
+| **Site** | [vibecursor.euroapp.site](https://vibecursor.euroapp.site) — rotating phone/tablet demo. Source: [`landing/`](./landing/) (HTML carousel, not screenshots). |
 
 In the app: **Menu → Update UI** to pull the latest OTA (**20260908c9**) without reinstalling the APK.
 
