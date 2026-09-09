@@ -4,11 +4,6 @@
   <img src="assets/logo.jpg" alt="VibeAgent — unofficial Cursor AI for Android logo" width="180" height="180" />
 </p>
 
-### Phone / Tablet carousel (landing source)
-
-- **Live:** [vibecursor.euroapp.site](https://vibecursor.euroapp.site) — apri la pagina, in alto Phone ↔ Tablet, le scene ruotano da sole.  
-- **Codice su questo repo:** cartella [`landing/`](https://github.com/exinorg/cursor-android/tree/main/landing) → file `landing/index.html` (è HTML+JS, non un video/gif).
-
 **Unofficial Cursor AI client for Android.**  
 There is still **no official Cursor app on Android** (Cursor focuses on desktop + iOS). This APK is a **ready-to-run app**: chat with the agent, use your Cursor account, work on projects and preview — **everything needed is packaged with the app** (one first-time setup download on the phone).
 
@@ -114,7 +109,7 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 | **Lite ↔ CLI** | Header button switches light chat vs terminal view. |
 | **BETA** | Home + menu only (removed from chat header). |
 | **Chat backgrounds** | Picker fixed; sheet scrolls; clearer over bubbles. |
-| **Site** | [vibecursor.euroapp.site](https://vibecursor.euroapp.site) — rotating phone/tablet demo. Source: [`landing/`](./landing/) (HTML carousel, not screenshots). |
+| **Site** | [vibecursor.euroapp.site](https://vibecursor.euroapp.site) — rotating phone/tablet demo. |
 
 In the app: **Menu → Update UI** to pull the latest OTA (**20260908c9**) without reinstalling the APK.
 
