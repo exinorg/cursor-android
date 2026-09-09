@@ -1,27 +1,25 @@
 # What's new (VibeAgent / VibeCursor)
 
-Synced with UI OTA **20260908d9** · APK **1.0.3** · https://vibecursor.euroapp.site
+Synced with UI OTA **20260909a2** · APK **1.0.4** · https://vibecursor.euroapp.site
 
-## Access / ads
-- Clear message if an **ad blocker** blocks daily unlock: turn it off → watch the video → you can turn it back on
-- No more vague «need connection» only
-
-## Chat
-- **↻ Rilancia** on user and assistant messages (retry if the chat drops)
-- **CLI** view: full live transcript (tools / thinking / results), stable «Working… Ns» bar + activity line
-- **Lite** stays compact
-- Red **update dot** on the ☰ menu when a newer UI/agent is available
-
-## Preview
-- **↻ Refresh** is on the preview top bar (next to ✕)
-
-## Agent reliability (needs APK reinstall)
-- APK **1.0.3**: agent no longer killed 8 seconds after «I'll create…» (broke Tetris / long writes)
+## Agent update (needs APK reinstall)
+- APK **1.0.4**: after **Update agent**, the app uses the new binary under `~/.local` (before it kept launching the old `/opt` copy and asked to update again)
 
 ## Language
-- Default: **Automatic** (phone locale)
+- **English** (and other languages): menu, daily access screen, and update banners now translate
 - Chips: 🌐 Automatic / 🇬🇧 EN / 🇮🇹 IT
 
-In the app: **Menu → Update UI** for OTA. **Reinstall the APK** from this repo for 1.0.3 Java fixes.
+## Chat / UI
+- Cursor agent update banner **closes by itself** after update (no stuck «Update» bar)
+- Ad blocker: hard stop — you cannot enter chat while a blocker is detected (even with a valid day)
+- Update banner / buttons stay on screen (no overflow)
+
+## Access / ads
+- Clear ad-blocker copy; rewarded unlock with SSV fallback when needed
+
+## Preview / CLI (earlier)
+- **↻ Refresh** on the preview bar · **↻ Rilancia** on messages · CLI live transcript · red update dot on ☰
+
+In the app: **Menu → Update UI** for OTA. **Reinstall this APK** for 1.0.4 Java fixes.
 
 Download APK: this repo · Site: https://vibecursor.euroapp.site · Telegram: https://t.me/VibeCursorAndroid
