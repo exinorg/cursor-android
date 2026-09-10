@@ -121,7 +121,7 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 | **Chat backgrounds** | Picker fixed; sheet scrolls; clearer over bubbles. |
 | **Site** | [vibecursor.euroapp.site](https://vibecursor.euroapp.site) — rotating phone/tablet demo. |
 
-In the app: **Menu → Update UI** to pull the latest OTA (**20260908c9**) without reinstalling the APK.
+In the app: **Menu → Update UI** to pull the latest OTA (**20260910a19**) without reinstalling the APK. See **WHATS-NEW.md** for APK **1.0.13**.
 
 Site: [vibecursor.euroapp.site](https://vibecursor.euroapp.site)
 
