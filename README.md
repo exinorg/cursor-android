@@ -17,7 +17,8 @@ All shots: [`assets/img/`](./assets/img/)
 **Unofficial Cursor AI client for Android.**  
 There is still **no official Cursor app on Android** (Cursor focuses on desktop + iOS). This APK is a **ready-to-run app**: chat with the agent, use your Cursor account, work on projects and preview — **everything needed is packaged with the app** (one first-time setup download on the phone).
 
-**Latest:** APK **2.0.0** (`site.euroapp.vibecursor2`) · UI `20260911.22` · all-in-one · [Download](https://vibecursor.euroapp.site/VibeCursor.apk)
+**Latest:** VibeCursor **2.0.0** (`site.euroapp.vibeagent`) · UI updates over-the-air
+[**Get it on Google Play**](https://play.google.com/store/apps/details?id=site.euroapp.vibeagent) · [Full APK (157 MB, system included)](https://vibecursor.euroapp.site/VibeCursor.apk) · [Lite APK (6 MB, downloads the system on first run)](https://vibecursor.euroapp.site/VibeCursor-lite.apk)
 
 ### Free — no subscriptions
 
@@ -66,7 +67,9 @@ Official Cursor today is mainly **desktop** and **iOS**. This project ships an *
 
 | Link | Notes |
 |------|--------|
-| [vibecursor.euroapp.site/VibeCursor.apk](https://vibecursor.euroapp.site/VibeCursor.apk) | Latest **2.0.0** (`vibecursor2`) |
+| [Google Play](https://play.google.com/store/apps/details?id=site.euroapp.vibeagent) | Recommended: auto-updates, system as install-time asset pack |
+| [vibecursor.euroapp.site/VibeCursor.apk](https://vibecursor.euroapp.site/VibeCursor.apk) | Full APK **2.0.0** (157 MB, system included) |
+| [vibecursor.euroapp.site/VibeCursor-lite.apk](https://vibecursor.euroapp.site/VibeCursor-lite.apk) | Lite APK **2.0.0** (6 MB, downloads the system on first run) |
 
 1. Download from the site on the phone.  
 2. Allow **Install unknown apps**.  
