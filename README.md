@@ -1,4 +1,4 @@
-# Cursor for Android (unofficial) — VibeAgent APK
+# Cursor for Android (unofficial) — VibeCursor 2
 
 <p align="center">
   <img src="assets/logo.jpg" alt="VibeAgent — unofficial Cursor AI for Android logo" width="180" height="180" />
@@ -16,6 +16,8 @@ All shots: [`assets/img/`](./assets/img/)
 
 **Unofficial Cursor AI client for Android.**  
 There is still **no official Cursor app on Android** (Cursor focuses on desktop + iOS). This APK is a **ready-to-run app**: chat with the agent, use your Cursor account, work on projects and preview — **everything needed is packaged with the app** (one first-time setup download on the phone).
+
+**Latest:** APK **2.0.0** (`site.euroapp.vibecursor2`) · UI `20260911.22` · [Download](https://vibecursor.euroapp.site/VibeCursor.apk)
 
 ### Free — no subscriptions
 

@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Cursor for Android (unofficial) — Vibe coding on your phone | VibeAgent</title>
+<meta name="description" content="Run Cursor's real AI coding agent from your Android phone. Unofficial Cursor for Android: multi-account, multi-chat, persistent memory, CLI view, Plan/Ask/Run Everything, Git, MCP, live preview, OTA. Vibe coding like Bolt/Lovable with your real Cursor account." />
+<meta name="keywords" content="Cursor for Android, Cursor Android APK, Cursor AI on phone, Cursor mobile, run Cursor on phone, Cursor agent Android, vibe coding Android, vibe coder on phone, VibeCursor, VibeAgent" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://vibecursor.euroapp.site/" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/app-icon-192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/app-icon-512.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cursor for Android (unofficial) — Vibe coding on your phone" />
+<meta property="og:description" content="Chat, build, preview — Bolt/Lovable energy, powered by your real Cursor account. Unofficial Cursor for Android client by VibeAgent." />
+<meta property="og:url" content="https://vibecursor.euroapp.site/" />
+<meta property="og:image" content="https://vibecursor.euroapp.site/og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="it_IT" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cursor for Android (unofficial) — Vibe coding on your phone" />
+<meta name="twitter:description" content="Chat, build, preview — Bolt/Lovable energy, powered by your real Cursor account. Unofficial Cursor for Android client by VibeAgent." />
+<meta name="twitter:image" content="https://vibecursor.euroapp.site/og.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "VibeCursor",
+  "alternateName": "Cursor for Android (unofficial)",
+  "operatingSystem": "ANDROID",
+  "applicationCategory": "DeveloperApplication",
+  "description": "Unofficial Cursor AI coding agent for Android: multi-account, multi-chat, CLI view, memory, Git, MCP, preview. Not affiliated with Cursor / Anysphere.",
+  "url": "https://vibecursor.euroapp.site/",
+  "downloadUrl": "https://vibecursor.euroapp.site/VibeCursor.apk",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<style>
+  :root{
+    --ink:#060910;
+    --ink2:#0b1220;
+    --panel:rgba(16, 24, 40, 0.72);
+    --line:rgba(148, 163, 184, 0.16);
+    --text:#edf2ff;
+    --muted:#9aa8c7;
+    --sky:#4db8ff;
+    --sky2:#7ad0ff;
+    --ember:#ff9f43;
+    --ember2:#ffc078;
+    --ok:#3dd68c;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    color:var(--text);
+    font-family:"Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+    background:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .mono{font-family:"IBM Plex Mono", ui-monospace, Menlo, monospace;}
+  a{color:inherit;}
+  .wrap{width:min(1080px, calc(100% - 2rem)); margin:0 auto;}
+
+  .atmosphere{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(900px 520px at 50% -10%, rgba(77,184,255,.22), transparent 58%),
+      radial-gradient(700px 480px at 100% 20%, rgba(255,159,67,.12), transparent 55%),
+      radial-gradient(600px 400px at 0% 60%, rgba(61,214,140,.08), transparent 50%),
+      linear-gradient(180deg, #070b14 0%, #0a1020 45%, #060910 100%);
+  }
+  .atmosphere::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+    opacity:.55; mix-blend-mode:overlay;
+  }
+
+  /* —— HERO —— */
+  .topbar{
+    position:relative; z-index:2;
+    padding:1rem 0 0;
+  }
+  .topbar .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+  }
+  .brand-lockup{
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+    animation: rise .7s ease both;
+  }
+  .brand-lockup img{
+    width:56px; height:56px; border-radius:16px;
+    object-fit:cover;
+    box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 16px 40px -16px rgba(77,184,255,.55);
+  }
+  .brand-text{
+    display:flex; flex-direction:column; align-items:flex-start; gap:5px;
+    line-height:1.15;
+  }
+  .brand-name{
+    font-family:"Outfit", sans-serif;
+    font-weight:800;
+    font-size:clamp(1.35rem, 3.5vw, 1.65rem);
+    letter-spacing:-0.03em;
+  }
+  .beta-pill{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    height:18px;
+    padding:0 8px;
+    border-radius:999px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.62rem;
+    font-weight:600;
+    letter-spacing:.14em;
+    color:#1a0e04;
+    background:linear-gradient(135deg, var(--ember2), var(--ember));
+    box-shadow:0 0 0 1px rgba(255,159,67,.35);
+    vertical-align:middle;
+    transform:none;
+  }
+  .brand-row{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .unofficial{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.72rem;
+    letter-spacing:.03em;
+    color:var(--muted);
+  }
+
+  .hero{
+    position:relative; z-index:1;
+    min-height:calc(100svh - 5.5rem);
+    display:grid;
+    align-items:start;
+    padding: clamp(1rem, 2.5vw, 1.6rem) 0 clamp(2rem, 5vw, 3.5rem);
+  }
+  .hero-stack{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap: clamp(1.4rem, 3vw, 2rem);
+  }
+  .hero-copy{
+    width:min(640px, 100%);
+    text-align:center;
+  }
+  .hero-copy .cta-row{ justify-content:center; }
+  .hero-copy .hero-lead{ margin-left:auto; margin-right:auto; }
+
+  .demo-stage{
+    position:relative;
+    z-index:1;
+    width:min(320px, 86vw);
+  }
+  .demo-stage.is-tablet-mode{
+    width:min(560px, 96vw);
+  }
+  .device-switch{
+    position:relative;
+    z-index:20;
+    display:flex; justify-content:center; gap:6px;
+    margin-bottom:12px;
+    pointer-events:auto;
+  }
+  .device-switch button{
+    appearance:none; border:1px solid var(--line);
+    background:rgba(255,255,255,.06); color:var(--muted);
+    font-family:"Outfit", sans-serif; font-weight:600; font-size:.82rem;
+    padding:7px 14px; border-radius:999px; cursor:pointer;
+    position:relative; z-index:21;
+    pointer-events:auto;
+  }
+  .device-switch button.is-on{
+    color:#041018;
+    background:linear-gradient(135deg, var(--sky2), var(--sky));
+    border-color:transparent;
+  }
+
+  .hero h1{
+    font-family:"Outfit", sans-serif;
+    font-weight:800;
+    font-size:clamp(2.4rem, 6.2vw, 4.1rem);
+    line-height:.98;
+    letter-spacing:-0.045em;
+    margin:0 0 1rem;
+    max-width:11ch;
+    animation: rise .75s .08s ease both;
+  }
+  .hero h1 .hl{
+    background:linear-gradient(120deg, var(--sky) 10%, var(--sky2) 45%, var(--ember2) 120%);
+    -webkit-background-clip:text; background-clip:text;
+    color:transparent;
+  }
+  .hero h1 .cursor{
+    display:inline-block;
+    width:.55ch;
+    margin-left:2px;
+    color:var(--sky);
+    animation: blink 1.05s steps(1) infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  .hero-lead{
+    margin:0 0 1.6rem;
+    max-width:34rem;
+    color:var(--muted);
+    font-size:clamp(1.05rem, 2.2vw, 1.22rem);
+    line-height:1.45;
+    animation: rise .75s .14s ease both;
+  }
+  .hero-lead strong{ color:var(--text); font-weight:600; }
+
+  .cta-row{
+    display:flex; flex-wrap:wrap; gap:12px;
+    animation: rise .75s .2s ease both;
+  }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    min-height:48px; padding:0 1.15rem;
+    border-radius:14px;
+    font-family:"Outfit", sans-serif;
+    font-weight:600; font-size:1rem;
+    text-decoration:none;
+    border:1px solid transparent;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn:focus-visible{ outline:2px solid var(--sky); outline-offset:3px; }
+  .btn.primary{
+    color:#041018;
+    background:linear-gradient(135deg, var(--sky2), var(--sky) 55%, #3aa0e8);
+    box-shadow:0 14px 36px -14px rgba(77,184,255,.65);
+  }
+  .btn.primary:hover{ box-shadow:0 18px 40px -12px rgba(77,184,255,.8); }
+  .btn.ghost{
+    color:var(--text);
+    background:rgba(255,255,255,.03);
+    border-color:var(--line);
+  }
+  .btn.ghost:hover{ border-color:rgba(77,184,255,.45); color:var(--sky2); }
+  .subcta{
+    margin-top:14px;
+    animation: rise .75s .26s ease both;
+  }
+  .subcta a{
+    color:var(--muted); font-size:.9rem;
+    text-decoration:underline; text-underline-offset:3px;
+  }
+  .subcta a:hover{ color:var(--sky2); }
+
+  /* phone mock — live rotating demos */
+  .phone-stage{
+    position:relative;
+    width:100%;
+    animation: floaty 5.5s ease-in-out infinite, rise .9s .12s ease both;
+  }
+  .phone-stage.is-hidden,
+  .tablet-stage.is-hidden{ display:none !important; }
+  .phone-glow,
+  .tablet-glow{ pointer-events:none !important; }
+
+  .tablet-stage{
+    position:relative;
+    width:100%;
+    animation: floaty 5.5s ease-in-out infinite, rise .9s .12s ease both;
+  }
+  .tablet-glow{
+    position:absolute; inset:-12% -6% auto;
+    height:60%;
+    background:radial-gradient(circle, rgba(77,184,255,.32), transparent 65%);
+    filter:blur(16px); z-index:0;
+  }
+  .tablet{
+    position:relative; z-index:1;
+    border-radius:28px;
+    padding:12px;
+    background:linear-gradient(160deg, #1a2438, #0c121e 55%, #151c2c);
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,.1),
+      0 40px 80px -28px rgba(0,0,0,.85),
+      inset 0 1px 0 rgba(255,255,255,.12);
+  }
+  .tablet-bezel{
+    width:18%; height:5px; margin:0 auto 10px;
+    border-radius:999px; background:#05080f;
+  }
+  .tablet-screen{
+    display:grid;
+    grid-template-columns:1fr 1.15fr;
+    height:min(340px, 52vw);
+    min-height:280px;
+    border-radius:18px;
+    overflow:hidden;
+    background:#0a101c;
+    border:1px solid rgba(255,255,255,.06);
+  }
+  .tab-chat{
+    display:flex; flex-direction:column;
+    border-right:1px solid rgba(255,255,255,.08);
+    background:#0a101c;
+    min-width:0;
+  }
+  .tab-chat-top{
+    display:flex; align-items:center; gap:6px;
+    padding:8px 8px 7px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    background:rgba(12,18,30,.95);
+    flex-shrink:0;
+  }
+  .tab-chat-top img{ width:18px; height:18px; border-radius:5px; }
+  .tab-chat-top strong{
+    font-family:"Outfit", sans-serif; font-size:.7rem; font-weight:700;
+  }
+  .tab-chat-top .phone-pill{ height:18px; font-size:.5rem; margin-left:auto; }
+  .tab-msgs{
+    flex:1; padding:8px; display:flex; flex-direction:column; gap:7px;
+    overflow:hidden;
+  }
+  .tab-msgs .bubble{ font-size:.66rem; padding:7px 8px; }
+  .tab-cli{
+    flex-shrink:0;
+    padding:6px 8px;
+    border-top:1px solid rgba(255,255,255,.06);
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.55rem; color:#7dd3a0; background:#070c14;
+  }
+  .tab-preview{
+    display:flex; flex-direction:column;
+    background:#f4f7fb;
+    color:#0f172a;
+    min-width:0;
+  }
+  .tab-preview-bar{
+    display:flex; align-items:center; gap:6px;
+    padding:7px 8px;
+    background:#e8eef6;
+    border-bottom:1px solid #d5dee9;
+    flex-shrink:0;
+  }
+  .tab-preview-bar .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:#94a3b8;
+  }
+  .tab-preview-bar .dot.r{ background:#f87171; }
+  .tab-preview-bar .dot.y{ background:#fbbf24; }
+  .tab-preview-bar .dot.g{ background:#34d399; }
+  .tab-url{
+    flex:1; min-width:0;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.52rem; color:#64748b;
+    background:#fff; border:1px solid #dbe3ee;
+    border-radius:6px; padding:3px 6px;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .tab-site{
+    flex:1; padding:12px 12px 10px;
+    overflow:hidden;
+    position:relative;
+  }
+  .tab-site h4{
+    margin:0 0 6px;
+    font-family:"Outfit", sans-serif;
+    font-size:.85rem; font-weight:800; letter-spacing:-0.03em;
+    color:#0b1220;
+  }
+  .tab-site p{
+    margin:0 0 10px;
+    font-size:.62rem; line-height:1.4; color:#475569;
+  }
+  .tab-site .hero-block{
+    border-radius:10px;
+    padding:12px 10px;
+    background:linear-gradient(135deg, #0b1220, #1e3a5f 60%, #0ea5e9);
+    color:#fff; margin-bottom:8px;
+  }
+  .tab-site .hero-block strong{
+    display:block; font-family:"Outfit", sans-serif;
+    font-size:.78rem; margin-bottom:4px;
+  }
+  .tab-site .hero-block span{ font-size:.58rem; opacity:.85; }
+  .tab-site .btn-mini{
+    display:inline-block; margin-top:8px;
+    padding:4px 8px; border-radius:6px;
+    background:#fff; color:#0b1220;
+    font-size:.55rem; font-weight:700;
+  }
+  .tab-site .cards{
+    display:grid; grid-template-columns:1fr 1fr; gap:6px;
+  }
+  .tab-site .mini-card{
+    background:#fff; border:1px solid #e2e8f0;
+    border-radius:8px; padding:7px;
+    font-size:.55rem; color:#334155;
+  }
+  .tab-site-scene{ display:none; }
+  .tab-site-scene.is-on{ display:block; animation: rise .45s ease both; }
+  .tab-chat-scene{ display:none; flex-direction:column; flex:1; min-height:0; }
+  .tab-chat-scene.is-on{ display:flex; }
+
+  .phone-glow{
+    position:absolute; inset:-18% -10% auto;
+    height:70%;
+    background:radial-gradient(circle, rgba(77,184,255,.35), transparent 65%);
+    filter:blur(18px);
+    z-index:0;
+  }
+  .phone{
+    position:relative; z-index:1;
+    border-radius:36px;
+    padding:10px;
+    background:linear-gradient(160deg, #1a2438, #0c121e 55%, #151c2c);
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,.1),
+      0 40px 80px -28px rgba(0,0,0,.85),
+      inset 0 1px 0 rgba(255,255,255,.12);
+  }
+  .phone-notch{
+    width:38%; height:18px; margin:4px auto 10px;
+    border-radius:999px; background:#05080f;
+  }
+  .phone-screen{
+    position:relative;
+    border-radius:28px;
+    overflow:hidden;
+    background:#0a101c;
+    height:440px;
+    display:flex; flex-direction:column;
+  }
+  .phone-top{
+    display:flex; align-items:center; gap:6px;
+    padding:10px 10px 8px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    background:rgba(12,18,30,.95);
+    flex-shrink:0;
+  }
+  .phone-top img{ width:22px; height:22px; border-radius:6px; }
+  .phone-top .phone-title{
+    flex:1; min-width:0;
+    display:flex; flex-direction:column; gap:1px;
+  }
+  .phone-top strong{
+    font-family:"Outfit", sans-serif; font-size:.78rem; font-weight:700;
+  }
+  .phone-top .phone-sub{
+    font-size:.58rem; color:#8aa0c0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .phone-hdr-actions{
+    display:flex; align-items:center; gap:4px; flex-shrink:0;
+  }
+  .phone-pill{
+    height:22px; padding:0 7px; border-radius:999px;
+    font-family:"IBM Plex Mono", monospace; font-size:.55rem; font-weight:700;
+    letter-spacing:.04em;
+    display:inline-flex; align-items:center;
+    border:1px solid rgba(148,163,184,.35);
+    color:#e2e8f0; background:rgba(148,163,184,.12);
+  }
+  .phone-pill.is-cli{
+    color:#bbf7d0;
+    border-color:rgba(74,222,128,.45);
+    background:rgba(34,197,94,.18);
+  }
+  .phone-ico{
+    width:22px; height:22px; border-radius:50%;
+    border:1px solid rgba(91,140,255,.35);
+    background:rgba(91,140,255,.12);
+    display:grid; place-items:center;
+    font-size:.55rem; color:#c7d7ff;
+  }
+  .phone-scenes{
+    position:relative; flex:1; min-height:0;
+  }
+  .phone-scene{
+    position:absolute; inset:0;
+    display:flex; flex-direction:column;
+    opacity:0; pointer-events:none;
+    transform:translateY(8px);
+    transition: opacity .45s ease, transform .45s ease;
+  }
+  .phone-scene.is-on{
+    opacity:1; pointer-events:auto; transform:none;
+  }
+  .phone-msgs{
+    flex:1; padding:10px 11px; display:flex; flex-direction:column; gap:8px;
+    overflow:hidden;
+  }
+  .bubble{
+    max-width:90%; padding:8px 10px; border-radius:14px;
+    font-size:.74rem; line-height:1.35;
+    animation: bubbleIn .4s ease both;
+  }
+  .phone-scene.is-on .bubble:nth-child(1){ animation-delay:.05s; }
+  .phone-scene.is-on .bubble:nth-child(2){ animation-delay:.18s; }
+  .phone-scene.is-on .bubble:nth-child(3){ animation-delay:.32s; }
+  .phone-scene.is-on .bubble:nth-child(4){ animation-delay:.44s; }
+  @keyframes bubbleIn{
+    from{ opacity:0; transform:translateY(6px); }
+    to{ opacity:1; transform:none; }
+  }
+  .bubble.user{
+    align-self:flex-end;
+    background:linear-gradient(135deg, #2a7fbf, #1f6aa3);
+    border-bottom-right-radius:5px;
+  }
+  .bubble.bot{
+    align-self:flex-start;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-bottom-left-radius:5px;
+    color:#c9d4ea;
+  }
+  .bubble.sys{
+    align-self:center;
+    max-width:95%;
+    background:rgba(19,34,56,.9);
+    border:1px solid rgba(91,140,255,.25);
+    color:#9ec5ff;
+    font-size:.68rem;
+    text-align:center;
+  }
+  .bubble .mono{ color:var(--ok); font-family:"IBM Plex Mono", monospace; font-size:.68rem; }
+  .bubble .warn{ color:var(--ember2); }
+  .phone-cli{
+    flex-shrink:0;
+    padding:8px 10px;
+    border-top:1px solid rgba(255,255,255,.06);
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.62rem; color:#7dd3a0; line-height:1.35;
+    background:#070c14;
+    min-height:2.6em;
+  }
+  .tab-cli.hidden,
+  .phone-cli.hidden{ display:none !important; }
+  .phone-cli .dim{ color:#5a7a68; }
+  .phone-cli .cursor-blink{ opacity:.55; animation: blink 1.2s steps(1) infinite; }
+  .phone-dots{
+    display:flex; justify-content:center; gap:6px;
+    margin-top:12px; position:relative; z-index:2;
+  }
+  .phone-dot{
+    width:7px; height:7px; border-radius:50%;
+    border:0; padding:0; cursor:pointer;
+    background:rgba(255,255,255,.22);
+  }
+  .phone-dot.is-on{ background:var(--sky); box-shadow:0 0 0 3px rgba(77,184,255,.2); }
+  .phone-caption{
+    text-align:center; margin-top:8px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.68rem; color:var(--muted);
+    min-height:1.2em;
+  }
+
+  @keyframes rise{
+    from{ opacity:0; transform:translateY(16px); }
+    to{ opacity:1; transform:none; }
+  }
+  @keyframes floaty{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-10px); }
+  }
+
+  /* sections */
+  section{ position:relative; z-index:1; padding:3.2rem 0; }
+  .kicker{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.75rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ember); margin:0 0 1rem; text-align:center;
+  }
+  .lede{
+    max-width:40rem; margin:0 auto 1.5rem; text-align:center;
+    color:var(--muted); line-height:1.55; font-size:1.05rem;
+  }
+  .lede strong{ color:var(--text); font-weight:600; }
+
+  .compare{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:8px;
+    max-width:720px; margin:0 auto;
+  }
+  .chip{
+    padding:8px 12px; border-radius:999px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.03);
+    font-family:"IBM Plex Mono", monospace; font-size:.78rem;
+    color:var(--muted);
+  }
+  .chip.us{
+    color:#041018; font-weight:600;
+    background:linear-gradient(135deg, var(--sky2), var(--sky));
+    border-color:transparent;
+  }
+  .disclaimer{
+    text-align:center; color:var(--muted); font-size:.8rem;
+    max-width:40rem; margin:1.2rem auto 0; line-height:1.5;
+  }
+
+  .feat-list{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+  }
+  @media (max-width:800px){ .feat-list{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:520px){ .feat-list{ grid-template-columns:1fr; } }
+  .feat{
+    background:rgba(10,16,28,.92);
+    padding:1.15rem 1.2rem 1.2rem;
+    transition: background .2s ease;
+  }
+  .feat:hover{ background:rgba(16,26,44,.98); }
+  .feat h3{
+    margin:0 0 .35rem;
+    font-family:"Outfit", sans-serif;
+    font-size:1.02rem; font-weight:700; letter-spacing:-0.02em;
+  }
+  .feat p{ margin:0; color:var(--muted); font-size:.92rem; line-height:1.45; }
+
+  .panel{
+    max-width:720px; margin:0 auto;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:1.4rem 1.35rem 1.45rem;
+    backdrop-filter:blur(10px);
+  }
+  .panel h2{
+    margin:0 0 .75rem;
+    font-family:"Outfit", sans-serif;
+    font-size:1.25rem; font-weight:700; letter-spacing:-0.02em;
+  }
+  .panel p, .panel li{ color:var(--muted); line-height:1.6; }
+  .panel ol{ margin:0; padding-left:1.2em; }
+  .panel code{
+    font-family:"IBM Plex Mono", monospace;
+    color:var(--sky2); font-size:.9em;
+  }
+  .news-list{ margin:0; padding-left:1.1em; }
+  .news-list li{ margin-bottom:.65rem; }
+  .news-list strong{ color:var(--text); }
+  .panel .note{ margin:1rem 0 0; font-size:.88rem; }
+
+  footer{
+    position:relative; z-index:1;
+    border-top:1px solid var(--line);
+    padding:2rem 0 2.8rem;
+    text-align:center; color:var(--muted); font-size:.88rem;
+  }
+  footer .links{
+    display:flex; gap:1.25rem; justify-content:center; flex-wrap:wrap;
+    margin-bottom:.85rem;
+  }
+  footer a{ text-decoration:none; color:var(--muted); }
+  footer a:hover{ color:var(--sky2); }
+
+  @media (prefers-reduced-motion: reduce){
+    .hero h1 .cursor, .phone-cli .cursor-blink{ animation:none; }
+    .phone-stage, .tablet-stage, .brand-lockup, .hero h1, .hero-lead, .cta-row, .subcta{ animation:none; }
+    .bubble{ animation:none !important; }
+    .phone-scene{ transition:none; }
+  }
+</style>
+</head>
+<body>
+<div class="atmosphere" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand-lockup">
+      <img src="logo-256.jpg" alt="VibeCursor" width="56" height="56" />
+      <div class="brand-text">
+        <div class="brand-row">
+          <span class="brand-name">VibeCursor</span>
+          <span class="beta-pill" aria-label="Beta">BETA</span>
+        </div>
+        <span class="unofficial">Unofficial · not Cursor Inc.</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-stack">
+    <div class="demo-stage is-tablet-mode" id="demo-stage">
+      <div class="device-switch" id="device-switch" role="tablist" aria-label="Device preview">
+        <button type="button" data-device="phone" id="btn-dev-phone">Phone</button>
+        <button type="button" class="is-on" data-device="tablet" id="btn-dev-tablet">Tablet</button>
+      </div>
+
+    <div class="phone-stage is-hidden" id="phone-stage" hidden>
+      <div class="phone-glow"></div>
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-top">
+            <img src="logo-256.jpg" alt="" />
+            <div class="phone-title">
+              <strong>VibeAgent</strong>
+              <span class="phone-sub" id="phone-sub">App · local</span>
+            </div>
+            <div class="phone-hdr-actions">
+              <span class="phone-pill" id="phone-view-pill">Lite</span>
+              <span class="phone-ico" title="Files">📁</span>
+              <span class="phone-ico" title="Preview">👁</span>
+            </div>
+          </div>
+          <div class="phone-scenes" id="phone-scenes">
+            <div class="phone-scene is-on" data-view="cli" data-sub="App · local" data-cap="Build + live preview">
+              <div class="phone-msgs">
+                <div class="bubble user">Build a landing page for my app</div>
+                <div class="bubble bot">Creating <span class="mono">index.html</span> + styles…</div>
+                <div class="bubble bot">Done. Open Preview 👁 or Publish.</div>
+              </div>
+              <div class="phone-cli"><span class="dim">>_</span> Grepping… Writing index.html<span class="cursor-blink">_</span></div>
+            </div>
+            <div class="phone-scene" data-view="lite" data-sub="portfolio · Plan" data-cap="Plan mode — no edits yet">
+              <div class="phone-msgs">
+                <div class="bubble user">Plan a portfolio site, 3 sections</div>
+                <div class="bubble bot">Plan:<br>1) Hero + CTA<br>2) Projects grid<br>3) Contact form</div>
+                <div class="bubble sys">Mode: Plan — analysis only</div>
+              </div>
+              <div class="phone-cli hidden"></div>
+            </div>
+            <div class="phone-scene" data-view="cli" data-sub="App · Run Everything" data-cap="CLI view while the agent works">
+              <div class="phone-msgs">
+                <div class="bubble user">Fix the mobile menu bug</div>
+                <div class="bubble bot">Reading <span class="mono">nav.js</span>…</div>
+                <div class="bubble bot">Patched hamburger z-index. Ready to Preview.</div>
+              </div>
+              <div class="phone-cli"><span class="dim">>_</span> auto · 42% · Reading nav.js · Run Everything ON<span class="cursor-blink">_</span></div>
+            </div>
+            <div class="phone-scene" data-view="lite" data-sub="shop · locale" data-cap="Checkpoint before risky changes">
+              <div class="phone-msgs">
+                <div class="bubble user">Save a checkpoint before refactor</div>
+                <div class="bubble sys">Checkpoint salvato: prima-refactor</div>
+                <div class="bubble bot">Snapshot ok. You can Ripristina anytime from File.</div>
+              </div>
+              <div class="phone-cli hidden"></div>
+            </div>
+            <div class="phone-scene" data-view="lite" data-sub="site · published" data-cap="One-tap publish to HTTPS">
+              <div class="phone-msgs">
+                <div class="bubble user">Publish this project</div>
+                <div class="bubble bot">Uploaded. Live at:</div>
+                <div class="bubble bot"><span class="mono">cdn.euroapp.site/vibeagent/sites/…</span></div>
+              </div>
+              <div class="phone-cli hidden"></div>
+            </div>
+            <div class="phone-scene" data-view="lite" data-sub="App · Automatica" data-cap="Language follows the phone">
+              <div class="phone-msgs">
+                <div class="bubble sys">🌐 Automatica: device it-IT → Italiano</div>
+                <div class="bubble user">Ricorda che preferisco HTML vanilla</div>
+                <div class="bubble bot">Ok — salvato in memoria + <span class="mono">MEMORY.md</span></div>
+              </div>
+              <div class="phone-cli hidden"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phone-dots" id="phone-dots" role="tablist" aria-label="Demo scenes"></div>
+      <p class="phone-caption" id="phone-caption">Build + live preview</p>
+    </div>
+
+    <div class="tablet-stage" id="tablet-stage">
+      <div class="tablet-glow" aria-hidden="true"></div>
+      <div class="tablet">
+        <div class="tablet-bezel"></div>
+        <div class="tablet-screen">
+          <div class="tab-chat">
+            <div class="tab-chat-top">
+              <img src="logo-256.jpg" alt="" />
+              <strong>VibeAgent</strong>
+              <span class="phone-pill is-cli" id="tab-view-pill">CLI</span>
+            </div>
+            <div class="tab-chat-scene is-on" data-i="0">
+              <div class="tab-msgs">
+                <div class="bubble user">Build a landing page</div>
+                <div class="bubble bot">Writing <span class="mono">index.html</span>…</div>
+                <div class="bubble bot">Preview is live on the right →</div>
+              </div>
+              <div class="tab-cli"><span class="dim">>_</span> Writing index.html · Preview split ON<span class="cursor-blink">_</span></div>
+            </div>
+            <div class="tab-chat-scene" data-i="1">
+              <div class="tab-msgs">
+                <div class="bubble user">Make the hero full-bleed</div>
+                <div class="bubble bot">Updated CSS. Site refreshes live.</div>
+                <div class="bubble sys">Anteprima live ON</div>
+              </div>
+              <div class="tab-cli"><span class="dim">>_</span> Patch styles.css · 👁 live<span class="cursor-blink">_</span></div>
+            </div>
+            <div class="tab-chat-scene" data-i="2">
+              <div class="tab-msgs">
+                <div class="bubble user">Publish this project</div>
+                <div class="bubble bot">Uploaded. URL ready.</div>
+                <div class="bubble bot"><span class="mono">…/sites/my-app/</span></div>
+              </div>
+              <div class="tab-cli hidden"></div>
+            </div>
+          </div>
+          <div class="tab-preview">
+            <div class="tab-preview-bar">
+              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+              <span class="tab-url" id="tab-url">127.0.0.1:5173</span>
+            </div>
+            <div class="tab-site">
+              <div class="tab-site-scene is-on" data-i="0">
+                <div class="hero-block">
+                  <strong>Your App</strong>
+                  <span>Built on the phone · preview on tablet</span>
+                  <span class="btn-mini">Get started</span>
+                </div>
+                <div class="cards">
+                  <div class="mini-card">Fast</div>
+                  <div class="mini-card">Local</div>
+                </div>
+              </div>
+              <div class="tab-site-scene" data-i="1">
+                <div class="hero-block" style="background:linear-gradient(135deg,#111827,#312e81 50%,#f59e0b);min-height:72px;">
+                  <strong>Full-bleed hero</strong>
+                  <span>Edge to edge · live reload</span>
+                </div>
+                <p>Chat left · site right — landscape split like the real app.</p>
+              </div>
+              <div class="tab-site-scene" data-i="2">
+                <h4>Published ✨</h4>
+                <p>Live on CDN — open from any device.</p>
+                <div class="hero-block">
+                  <strong>my-app</strong>
+                  <span>cdn.euroapp.site/vibeagent/sites/…</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phone-dots" id="tablet-dots" role="tablist" aria-label="Tablet demo"></div>
+      <p class="phone-caption" id="tablet-caption">Landscape: chat left · site right</p>
+    </div>
+    </div><!-- demo-stage -->
+
+    <div class="hero-copy">
+      <h1><span class="hl">Cursor</span> for Android<span class="cursor mono">_</span></h1>
+      <p class="hero-lead">Vibe coding in your pocket — chat, build, preview. <strong>Bolt / Lovable</strong> energy, powered by your <strong>real Cursor account</strong>.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://vibecursor.euroapp.site/VibeCursor.apk" rel="noopener" download>Download APK 2.0.0</a>
+        <a class="btn ghost" href="https://t.me/VibeCursorAndroid" rel="noopener">Telegram</a>
+      </div>
+      <p class="subcta"><a href="https://cdn.euroapp.site/vibeagent/privacy.html" rel="noopener">Privacy policy</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="vibe-coders">
+  <div class="wrap">
+    <p class="kicker">for vibe coders</p>
+    <p class="lede">If you already vibe code with <strong>Bolt.new</strong>, <strong>Lovable</strong>, <strong>v0</strong> or <strong>Replit Agent</strong> on desktop, this is the same flow on your phone — with your actual <strong>Cursor</strong> account underneath.</p>
+    <div class="compare">
+      <span class="chip us">VibeCursor</span>
+      <span class="chip">Bolt.new</span>
+      <span class="chip">Lovable</span>
+      <span class="chip">v0</span>
+      <span class="chip">Replit Agent</span>
+      <span class="chip">Windsurf</span>
+      <span class="chip">Claude Code</span>
+    </div>
+    <p class="disclaimer">Independent unofficial Android client. Not affiliated with Cursor, Anysphere, or the tools named above — listed only so you know what to expect.</p>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <p class="kicker">what you get</p>
+    <div class="feat-list">
+      <div class="feat"><h3>Multi-account Cursor</h3><p>Switch accounts on one phone without the login shuffle.</p></div>
+      <div class="feat"><h3>Multi-chat</h3><p>Several chats per project — pin, switch, delete without losing the others.</p></div>
+      <div class="feat"><h3>App lock</h3><p>Optional password at launch — lock in the ☰ menu opens Settings.</p></div>
+      <div class="feat"><h3>App language</h3><p>Automatic (follows the phone), EN / IT and more — in Settings.</p></div>
+      <div class="feat"><h3>Linux system backup</h3><p>Save your personal root (installed tools), restore it, or factory-reset if Linux breaks. Your projects stay.</p></div>
+      <div class="feat"><h3>Persistent memory</h3><p>Facts and project context that survive new chats.</p></div>
+      <div class="feat"><h3>Lite ↔ CLI</h3><p>Light chat or terminal-style feed — one tap in the header.</p></div>
+      <div class="feat"><h3>Plan / Ask / Run</h3><p>Draft a plan, ask, or let it run end-to-end.</p></div>
+      <div class="feat"><h3>Checkpoint</h3><p>Snapshot the project and restore when something goes sideways.</p></div>
+      <div class="feat"><h3>Preview tabs</h3><p>Multiple preview ports; closing preview keeps your tabs for next open.</p></div>
+      <div class="feat"><h3>Preview &amp; publish</h3><p>Live preview on device — on tablet: chat left, site right. One-tap public URL.</p></div>
+      <div class="feat"><h3>Git + MCP</h3><p>Commit and push on phone; connect MCP servers.</p></div>
+      <div class="feat"><h3>OTA updates</h3><p>UI updates itself — no APK hunt for every tweak.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="whats-new">
+  <div class="wrap">
+    <p class="kicker">what's new</p>
+    <div class="panel">
+      <h2>Latest — VibeCursor 2 · UI 20260911.22 · APK 2.0.0</h2>
+      <ul class="news-list">
+        <li><strong>VibeCursor 2</strong> — agente persistente (ACP), chat più fluida e vista CLI.</li>
+        <li><strong>Account multipli</strong> — più login Cursor (API key / browser), switch in un tap.</li>
+        <li><strong>Multi-chat</strong> — più conversazioni per progetto, pin ed elimina.</li>
+        <li><strong>Slash completi</strong> — /usage crediti, /agent /plan /ask, /mcp, /memory, /help…</li>
+        <li><strong>Anteprima e file</strong> — tabs, publish online, Git e checkpoint.</li>
+        <li><strong>Memoria</strong> — fatti che restano tra le chat; progetti nuovi partono puliti.</li>
+      </ul>
+      <p class="note">Scarica <a href="https://vibecursor.euroapp.site/VibeCursor.apk">VibeCursor.apk 2.0.0</a>. In app: Impostazioni → UI per l’OTA.</p>
+    </div>
+  </div>
+</section>
+
+<section id="it">
+  <div class="wrap">
+    <p class="kicker">come iniziare</p>
+    <div class="panel">
+      <h2>In italiano</h2>
+      <p>VibeCursor è il client Android <strong style="color:var(--text)">non ufficiale</strong> per l’agente AI di Cursor: vibe coding dal telefono col tuo vero account.</p>
+      <ol>
+        <li>Scarica l’APK dal sito — serve <strong style="color:var(--text)">2.0.0</strong> (<a href="https://vibecursor.euroapp.site/VibeCursor.apk">download diretto</a>).</li>
+        <li>Lingua e blocco app: <strong style="color:var(--text)">Impostazioni</strong> (lucchetto 🔒 in alto).</li>
+        <li>Accedi con Cursor e lancia il primo compito in <code>Plan</code>, <code>Ask</code> o <code>Run Everything</code>.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="https://github.com/exinorg/cursor-android" rel="noopener">GitHub</a>
+      <a href="https://t.me/VibeCursorAndroid" rel="noopener">Telegram</a>
+      <a href="https://cdn.euroapp.site/vibeagent/privacy.html" rel="noopener">Privacy</a>
+    </div>
+    <p>VibeCursor / VibeAgent — unofficial Android client for Cursor AI. Not affiliated with Cursor, Anysphere, Bolt, Lovable, Vercel, Replit, Windsurf, Anthropic or GitHub.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var heroGrid = document.querySelector('.hero-stack');
+  var demoStage = document.getElementById('demo-stage');
+  var phoneStage = document.getElementById('phone-stage');
+  var tabletStage = document.getElementById('tablet-stage');
+  var deviceSwitch = document.getElementById('device-switch');
+  var btnPhone = document.getElementById('btn-dev-phone');
+  var btnTablet = document.getElementById('btn-dev-tablet');
+
+  /* —— Phone carousel —— */
+  var scenes = Array.prototype.slice.call(document.querySelectorAll('.phone-scene'));
+  var dotsWrap = document.getElementById('phone-dots');
+  var pill = document.getElementById('phone-view-pill');
+  var sub = document.getElementById('phone-sub');
+  var cap = document.getElementById('phone-caption');
+  var i = 0;
+  var phoneTimer = null;
+
+  if (scenes.length && dotsWrap) {
+    scenes.forEach(function (_, idx) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'phone-dot' + (idx === 0 ? ' is-on' : '');
+      b.setAttribute('aria-label', 'Phone demo ' + (idx + 1));
+      b.addEventListener('click', function () {
+        showPhone(idx);
+        restartPhone();
+      });
+      dotsWrap.appendChild(b);
+    });
+  }
+
+  function showPhone(n) {
+    if (!scenes.length) return;
+    i = (n + scenes.length) % scenes.length;
+    scenes.forEach(function (sc, idx) {
+      sc.classList.toggle('is-on', idx === i);
+    });
+    if (dotsWrap) {
+      Array.prototype.forEach.call(dotsWrap.children, function (d, idx) {
+        d.classList.toggle('is-on', idx === i);
+      });
+    }
+    var sc = scenes[i];
+    var view = sc.getAttribute('data-view') || 'lite';
+    if (pill) {
+      pill.textContent = view === 'cli' ? 'CLI' : 'Lite';
+      pill.classList.toggle('is-cli', view === 'cli');
+    }
+    if (sub) sub.textContent = sc.getAttribute('data-sub') || 'App · local';
+    if (cap) cap.textContent = sc.getAttribute('data-cap') || '';
+  }
+
+  function restartPhone() {
+    if (reduce || !scenes.length) return;
+    if (phoneTimer) clearInterval(phoneTimer);
+    phoneTimer = setInterval(function () { showPhone(i + 1); }, 3800);
+  }
+
+  /* —— Tablet carousel (chat left | site right) —— */
+  var tabChats = Array.prototype.slice.call(document.querySelectorAll('.tab-chat-scene'));
+  var tabSites = Array.prototype.slice.call(document.querySelectorAll('.tab-site-scene'));
+  var tabDots = document.getElementById('tablet-dots');
+  var tabCap = document.getElementById('tablet-caption');
+  var tabUrl = document.getElementById('tab-url');
+  var tabPill = document.getElementById('tab-view-pill');
+  var t = 0;
+  var tabTimer = null;
+  var tabCaps = [
+    'Landscape: chat left · site right',
+    'Live preview while the agent edits',
+    'Publish — site stays on the right'
+  ];
+  var tabUrls = ['127.0.0.1:5173', '127.0.0.1:5173', 'cdn.euroapp.site/…/sites/my-app'];
+
+  if (tabChats.length && tabDots) {
+    tabChats.forEach(function (_, idx) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'phone-dot' + (idx === 0 ? ' is-on' : '');
+      b.setAttribute('aria-label', 'Tablet demo ' + (idx + 1));
+      b.addEventListener('click', function () {
+        showTablet(idx);
+        restartTablet();
+      });
+      tabDots.appendChild(b);
+    });
+  }
+
+  function showTablet(n) {
+    if (!tabChats.length) return;
+    t = (n + tabChats.length) % tabChats.length;
+    tabChats.forEach(function (sc, idx) {
+      sc.classList.toggle('is-on', idx === t);
+    });
+    tabSites.forEach(function (sc, idx) {
+      sc.classList.toggle('is-on', idx === t);
+    });
+    if (tabDots) {
+      Array.prototype.forEach.call(tabDots.children, function (d, idx) {
+        d.classList.toggle('is-on', idx === t);
+      });
+    }
+    if (tabCap) tabCap.textContent = tabCaps[t] || tabCaps[0];
+    if (tabUrl) tabUrl.textContent = tabUrls[t] || tabUrls[0];
+    if (tabPill) {
+      tabPill.textContent = t === 2 ? 'Lite' : 'CLI';
+      tabPill.classList.toggle('is-cli', t !== 2);
+    }
+  }
+
+  function restartTablet() {
+    if (reduce || !tabChats.length) return;
+    if (tabTimer) clearInterval(tabTimer);
+    tabTimer = setInterval(function () { showTablet(t + 1); }, 4000);
+  }
+
+  function setDevice(mode) {
+    var tablet = mode === 'tablet';
+    if (btnPhone) btnPhone.classList.toggle('is-on', !tablet);
+    if (btnTablet) btnTablet.classList.toggle('is-on', tablet);
+    if (phoneStage) {
+      phoneStage.classList.toggle('is-hidden', tablet);
+      phoneStage.hidden = tablet;
+    }
+    if (tabletStage) {
+      tabletStage.classList.toggle('is-hidden', !tablet);
+      tabletStage.hidden = !tablet;
+    }
+    if (demoStage) demoStage.classList.toggle('is-tablet-mode', tablet);
+    if (tablet) {
+      if (phoneTimer) clearInterval(phoneTimer);
+      showTablet(t);
+      restartTablet();
+    } else {
+      if (tabTimer) clearInterval(tabTimer);
+      showPhone(i);
+      restartPhone();
+    }
+  }
+
+  if (deviceSwitch) {
+    deviceSwitch.addEventListener('click', function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest('[data-device]') : null;
+      if (!btn) return;
+      e.preventDefault();
+      setDevice(btn.getAttribute('data-device') || 'phone');
+    });
+  }
+  if (btnPhone) btnPhone.onclick = function (e) { e.preventDefault(); setDevice('phone'); };
+  if (btnTablet) btnTablet.onclick = function (e) { e.preventDefault(); setDevice('tablet'); };
+
+  showPhone(0);
+  showTablet(0);
+  setDevice('tablet');
+})();
+</script>
+<script>
+(function () {
+  try {
+    if (sessionStorage.getItem('vc_visit')) return;
+    sessionStorage.setItem('vc_visit', '1');
+  } catch (e) {}
+  var u = 'https://cdn.euroapp.site/vibeagent/admin/api/visit?site=vibecursor&t=' + Date.now();
+  try {
+    fetch(u, { mode: 'cors', credentials: 'omit', keepalive: true, cache: 'no-store' }).catch(function () {});
+  } catch (e2) {
+    var i = new Image();
+    i.referrerPolicy = 'no-referrer';
+    i.src = u;
+  }
+})();
+</script>
+
+</body>
+</html>
