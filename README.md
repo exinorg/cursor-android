@@ -64,11 +64,9 @@ Official Cursor today is mainly **desktop** and **iOS**. This project ships an *
 
 | File | Notes |
 |------|--------|
-| [`VibeCursor-2.0.0.apk`](./VibeCursor-2.0.0.apk) | Latest — VibeCursor 2 (package `vibecursor2`) |
-| [`VibeAgent.apk`](./VibeAgent.apk) | Same build (alias) |
-| Site | [vibecursor.euroapp.site/VibeCursor.apk](https://vibecursor.euroapp.site/VibeCursor.apk) |
+| [`VibeCursor.apk`](./VibeCursor.apk) | Latest **2.0.0** — also on [vibecursor.euroapp.site](https://vibecursor.euroapp.site/VibeCursor.apk) |
 
-1. Open the site link on the phone, or copy the APK from this repo.  
+1. Open the site link on the phone, or download [`VibeCursor.apk`](./VibeCursor.apk) from this repo.  
 2. Allow **Install unknown apps** for your browser / file manager.  
 3. Install → open **VibeCursor**.
 

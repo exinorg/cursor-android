@@ -11,8 +11,8 @@ APK **2.0.0** · package `site.euroapp.vibecursor2` · https://vibecursor.euroap
 - UI **20260911.22**
 
 ## Download
-- Sito: https://vibecursor.euroapp.site/VibeCursor.apk
-- Repo: `VibeCursor-2.0.0.apk` / `VibeAgent.apk`
+- Un solo file: https://vibecursor.euroapp.site/VibeCursor.apk
+- Stesso file nel repo: `VibeCursor.apk`
 - Telegram: https://t.me/VibeCursorAndroid
 
 ## Privacy
