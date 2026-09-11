@@ -21,7 +21,7 @@ There is still **no official Cursor app on Android** (Cursor focuses on desktop 
 
 - The **app is free**. There is **no paid subscription** inside VibeAgent.  
 - You only need **your own Cursor account** (same as desktop) for the AI agent.  
-- Access can use optional rewarded ads **or** a **promo code** from the Telegram channel (**3 free days** per code use on that phone).
+- Ads support the free app; there is no paid VibeAgent access plan.
 
 > **Not affiliated with Anysphere / Cursor.**  
 > Third-party client. Use your **own** Cursor account / API key. Read the disclaimer below.
@@ -107,7 +107,8 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 - **In-app UI updates** (OTA) when available  
 - **Fullscreen** + screen rotation lock options  
 - **Free app** — no in-app subscription  
-- Optional rewarded ads **or** Telegram **promo code** (**3 free days**)  
+- **Safe Agent update** — installs the new CLI, selects it immediately and shows the real version
+- **Reliable setup** — resumable rootfs, runtime fallback and explicit Cursor login after install
 
 ---
 
@@ -115,13 +116,13 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 
 | Item | Detail |
 |------|--------|
-| **Language** | Default **Automatic** (device locale); EN / IT + full list (install, login, Settings, ☰). |
-| **Lite ↔ CLI** | Header button switches light chat vs terminal view. |
-| **BETA** | Home + menu only (removed from chat header). |
-| **Chat backgrounds** | Picker fixed; sheet scrolls; clearer over bubbles. |
-| **Site** | [vibecursor.euroapp.site](https://vibecursor.euroapp.site) — rotating phone/tablet demo. |
+| **Agent update** | `/update` works; the newly installed binary is selected without restarting the app. |
+| **Setup** | Runtime fallback, resumable download and Cursor login only after a user tap. |
+| **Ads** | Faster startup, no delayed interstitial during download, 300×250 setup banner. |
+| **API key** | Validated with Cursor before it is stored. |
+| **Monitor** | One row per IP with expandable action history and valid-access details. |
 
-In the app: **Menu → Update UI** to pull the latest OTA (**20260910a19**) without reinstalling the APK. See **WHATS-NEW.md** for APK **1.0.13**.
+In the app: **Menu → Update UI** to pull the latest OTA (**20260911a28**) without reinstalling the APK. See **WHATS-NEW.md** for APK **1.0.26**.
 
 Site: [vibecursor.euroapp.site](https://vibecursor.euroapp.site)
 
@@ -162,7 +163,6 @@ Same Cursor account as on desktop.
 - **API key:** [Dashboard API Keys](https://cursor.com/dashboard/api?section=user-keys) → paste in the app.  
 - **Multiple accounts:** sign in with **2+ Cursor accounts** (OAuth and/or API key) and switch from *Add Cursor account* / the account list.  
 - **Setup:** first launch installs the bundled runtime (~290 MB). Then you work on the phone.  
-- **3 free days:** join the [Telegram channel](https://t.me/VibeCursorAndroid), get the **promo code**, enter it on the access screen.  
 - **Clipboard / notes:** in-app clipboard manager — save and reuse everything you copy/paste (codes, snippets, keys, promo codes, links).  
 - **Memory:** persistent facts/episodes + `MEMORY.md` (Settings → Memory, `/memory`, “remember that…”). Not a full Hermes agent — lightweight so it fits on phone.  
 - **New options:** **app language** (default Automatic / phone locale; EN / IT / full list in menu), Lite↔CLI header toggle, Run Everything, Plan/Ask, Checkpoint, HTML templates, Publish, Git, MCP, live preview, notes widget, OTA UI updates.
@@ -176,7 +176,6 @@ Same Cursor account as on desktop.
 - **API key:** [Dashboard API Keys](https://cursor.com/dashboard/api?section=user-keys) → incolla in app.  
 - **Più account:** puoi entrare con **2+ account Cursor** (OAuth e/o API key) e cambiare dal menu *Aggiungi account* / lista account.  
 - **Setup:** la prima volta l’app installa i componenti inclusi (~290 MB). Poi lavori sul telefono.  
-- **3 giorni gratis:** entra nel [canale Telegram](https://t.me/VibeCursorAndroid), prendi il **codice promo** e inseriscilo in app (schermata accesso).  
 - **Clipboard / annotazioni:** gestore clipboard in-app — salva e riusa tutti i pezzi che copi/incolli (codici, snippet, chiavi, promo, link).  
 - **Memoria persistente:** fatti/episodi + `MEMORY.md` (Impostazioni → Memoria, `/memory`, «ricorda che…»). Non è Hermes completo — leggera, resta sul telefono tra una chat e l’altra.  
 - **Nuove opzioni:** **lingua app** (default Automatica = telefono; EN / IT / lista nel menu ☰), toggle Lite↔CLI in header, Run Everything, Plan/Ask, Checkpoint, template HTML, Pubblica, Git, MCP, anteprima live, widget note, OTA.
@@ -204,7 +203,7 @@ Also linked in the app (access screen + Settings).
 
 - Agent and project files run **on your device**.  
 - Models/usage go through **your Cursor account**.  
-- The app itself is **free** (no subscription). Optional rewarded video or a Telegram promo code (**3 free days**) may unlock access time.  
+- The app itself is **free** (no VibeAgent subscription); ads may be shown to support it.
 - Full policy: [cdn.euroapp.site/vibeagent/privacy.html](https://vibecursor.euroapp.site/privacy.html)  
 - Never share API keys. Rotate if leaked.
 
