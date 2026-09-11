@@ -1,6 +1,6 @@
 # What's new (VibeCursor)
 
-APK **2.0.0** all-in-one · package `site.euroapp.vibecursor2` · https://vibecursor.euroapp.site
+VibeCursor **2.0.0** · package `site.euroapp.vibeagent` (same app, updates over v1) · [Google Play](https://play.google.com/store/apps/details?id=site.euroapp.vibeagent) · https://vibecursor.euroapp.site
 
 ## All-in-one
 - Rootfs **dentro** l’APK (~165 MB): al primo avvio solo estrazione, niente download sistema.
@@ -12,7 +12,8 @@ APK **2.0.0** all-in-one · package `site.euroapp.vibecursor2` · https://vibecu
 - UI **20260911.22**
 
 ## Download
-- Solo dal sito: https://vibecursor.euroapp.site/VibeCursor.apk
+- Google Play: https://play.google.com/store/apps/details?id=site.euroapp.vibeagent
+- Sito: https://vibecursor.euroapp.site/VibeCursor.apk (completo) · https://vibecursor.euroapp.site/VibeCursor-lite.apk (leggero)
 - (Non nel repo GitHub: limite 100 MB)
 
 ## Privacy
