@@ -1,29 +1,29 @@
 # What's new (VibeCursor)
 
-APK **1.0.13** · package `site.euroapp.vibeagent` · https://vibecursor.euroapp.site
+APK **1.0.21** · package `site.euroapp.vibeagent` · https://vibecursor.euroapp.site
 
-## Needs APK reinstall (1.0.13)
-- Play-ready AAB/APK (targetSdk **36**, release signed)
-- Native: intent **Apri impostazioni DNS** (serve se vedi blocco ads)
-- Launcher / store name: **VibeCursor**
+## Needs APK reinstall (1.0.21)
+- Download rootfs più stabile: tiene i pezzi già scaricati (niente avanti/indietro), chunk 4 MB, size allineata al CDN
+- Annulla download immediato (disconnect + tronca)
+- Progetti default nello storage app (`filesDir/projects`)
+- Play-ready (targetSdk 36, release signed)
+- Intent **Apri impostazioni DNS**
+- Launcher / store: **VibeCursor**
 - Linux snaps / factory reset (da 1.0.7+)
-- Multi-account Cursor, preview tabs, app lock
 
-## OTA UI (Menu → Update UI, o auto all’apertura)
-- **20260910a19** — bottone DNS solo sulla schermata «blocco rilevato» (non in accesso)
-- Unlock dopo video senza attesa SSV; niente probe ads lunghi se il giorno è già sbloccato
-- Consent UMP come prima (al video)
+## OTA UI (Menu → Controlla UI)
+- **20260910a28** — sfondo home/step con codice che scorre lento; BETA compatto; card glass
+- **a26** — Installa sistema solo a pulsante (niente auto-start)
+- Coda download visibile (turno / slot)
 
-## Rootfs CDN (nuove install / chi reinstalla Linux)
-- Slim arm64 + **cursor-agent 2026.09.08**
-- Progetti e chat restano fuori dal root: reinstall APK / Update UI **non** cancella sessioni
-- Su telefono già installato: preferisci **Menu → Aggiorna agent**; re-estrai rootfs solo se vuoi ambiente Linux nuovo
+## Rootfs CDN
+- Slim arm64 + cursor-agent aggiornato
+- Progetti e chat fuori dal root: reinstall APK / Update UI **non** cancella sessioni
 
 ## Privacy
 https://vibecursor.euroapp.site/privacy.html
 
-## Earlier
-- **1.0.10** — VibeCursor naming, targetSdk 36
-- **1.0.7** — Sistema Linux: snapshot / restore / factory reset; progetti fuori root
-
-Download: `VibeAgent.apk` o `VibeCursor-1.0.13.apk` · Telegram: https://t.me/VibeCursorAndroid
+## Download
+- Sito: https://vibecursor.euroapp.site/VibeCursor.apk
+- Repo: `VibeAgent.apk` o `VibeCursor-1.0.21.apk`
+- Telegram: https://t.me/VibeCursorAndroid
