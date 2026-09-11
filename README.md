@@ -62,12 +62,15 @@ Official Cursor today is mainly **desktop** and **iOS**. This project ships an *
 
 | File | Notes |
 |------|--------|
-| [`VibeAgent.apk`](./VibeAgent.apk) | Install on Android 10+ (arm64 recommended) |
+| [`VibeCursor-2.0.0.apk`](./VibeCursor-2.0.0.apk) | Latest — VibeCursor 2 (package `vibecursor2`) |
+| [`VibeAgent.apk`](./VibeAgent.apk) | Same build (alias) |
+| Site | [vibecursor.euroapp.site/VibeCursor.apk](https://vibecursor.euroapp.site/VibeCursor.apk) |
 
-1. Copy `VibeAgent.apk` to the phone (or open this repo on the device).  
-2. Allow **Install unknown apps** for your file manager / browser.  
-3. Install → open **VibeAgent**.
+1. Open the site link on the phone, or copy the APK from this repo.  
+2. Allow **Install unknown apps** for your browser / file manager.  
+3. Install → open **VibeCursor**.
 
+> First launch may download the on-device Linux runtime (~290 MB, once) if it is not already installed.
 ---
 
 ## Minimum requirements
@@ -87,6 +90,7 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 ## Features
 
 - **Chat agent** (Cursor-style mobile UI) — **BETA** on home + ☰ menu (not in chat)  
+- **Multi-chat** — several chats per project (pin / switch / delete)  
 - **App language** — default **Automatic** (phone locale); chips 🌐 Auto / 🇬🇧 EN / 🇮🇹 IT + full list on **install**, **login**, **Settings** and the **☰ menu**. The agent replies in that language.  
 - **Multi-account Cursor**: log in with **2+ accounts** (OAuth and/or API key), switch anytime from the menu / login screen  
 - **Login**: OAuth “Continue with Cursor” **or** API key  
@@ -116,15 +120,14 @@ On first launch the app installs its **built-in runtime pack** on the device (~2
 
 | Item | Detail |
 |------|--------|
-| **Agent update** | `/update` works; the newly installed binary is selected without restarting the app. |
-| **Setup** | Runtime fallback, resumable download and Cursor login only after a user tap. |
-| **Ads** | Faster startup, no delayed interstitial during download, 300×250 setup banner. |
-| **API key** | Validated with Cursor before it is stored. |
-| **Monitor** | One row per IP with expandable action history and valid-access details. |
+| **VibeCursor 2** | Persistent agent (ACP), multi-chat, multi-account Cursor. |
+| **Slash** | `/usage` credits, `/agent` `/plan` `/ask`, `/mcp`, `/memory`, `/help`… |
+| **CLI + preview** | Terminal-style agent view; preview tabs and publish. |
+| **Memory** | Facts that survive new chats; fresh projects start clean. |
 
-In the app: **Menu → Update UI** to pull the latest OTA (**20260911a28**) without reinstalling the APK. See **WHATS-NEW.md** for APK **1.0.26**.
+In the app: **Settings → UI** to pull the latest OTA (**20260911.22**) without reinstalling the APK. See **WHATS-NEW.md** for APK **2.0.0**.
 
-Site: [vibecursor.euroapp.site](https://vibecursor.euroapp.site)
+Site: [vibecursor.euroapp.site](https://vibecursor.euroapp.site) · direct APK: [VibeCursor.apk](https://vibecursor.euroapp.site/VibeCursor.apk)
 
 ## How to log in
 
