@@ -87,6 +87,12 @@ This app is **unofficial**. It is not made by, endorsed by, sponsored by, or con
 - "Cursor" is used in the name **only for discoverability**: people search for an Android client and there is no official one. All trademarks belong to their owners.
 - If Anysphere asks, we will rename the project, remove the name, or hand over the repository — no payment, no conditions. Contact via the [Telegram channel](https://t.me/VibeCursorAndroid) or the email in [DISCLAIMER.md](./DISCLAIMER.md).
 
+## Remote Control — drive Cursor on your PC from the phone
+
+Since UI `20260913`: **Local** mode runs the agent in the phone (all-in-one); **Remote** mode sends your prompts to a tiny listener on your PC/VPS where `cursor-agent` runs with the computer's power and projects, streaming back to the phone. Bottom tab bar: Chat · Files · Preview · Remote · More.
+
+Setup in a minute — listener script and instructions in [`docs/REMOTE.md`](./docs/REMOTE.md) (`docs/remote-listener.mjs`). USB via `adb reverse`, or an HTTPS tunnel (cloudflared / Tailscale). Not Cursor's cloud Background Agents: it's our own HTTP bridge, and the PC has to stay on.
+
 ## What it is / what it is not
 
 **It is**
@@ -96,7 +102,7 @@ This app is **unofficial**. It is not made by, endorsed by, sponsored by, or con
 **It is not**
 - The official Cursor app, or a replacement for a Cursor plan — the agent needs **your** Cursor account and usage counts on **your** plan.
 - A way around Cursor's limits, quotas, or pricing. It adds nothing on top of what your account already allows.
-- A remote/cloud service: your projects stay on the phone. Publishing to a public URL is a planned, opt-in feature.
+- A cloud service: in Local mode your projects stay on the phone; in Remote mode they stay on **your** PC. Publishing to a public URL is a planned, opt-in feature.
 
 ## Your account and Cursor's Terms of Service
 
