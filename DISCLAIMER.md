@@ -9,3 +9,5 @@ This repository and the **VibeAgent** APK are provided as an **unofficial**, thi
 - Privacy policy: https://vibecursor.euroapp.site/privacy.html
 
 By installing the APK you accept these terms.
+
+**Trademark / takedown / contact:** euroapp2027@gmail.com — or the Telegram channel https://t.me/VibeCursorAndroid. Requests from Anysphere, Inc. regarding the Cursor name are honoured without conditions.
