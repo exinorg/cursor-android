@@ -18,7 +18,7 @@ All shots: [`assets/img/`](./assets/img/)
 There is still **no official Cursor app on Android** (Cursor focuses on desktop + iOS). This APK is a **ready-to-run app**: chat with the agent, use your Cursor account, work on projects and preview — **everything needed is packaged with the app** (one first-time setup download on the phone).
 
 **Latest:** VibeCursor **2.0.0** (`site.euroapp.vibeagent`) · UI updates over-the-air
-[**Get it on Google Play**](https://play.google.com/store/apps/details?id=site.euroapp.vibeagent) · [Full APK (157 MB, system included)](https://vibecursor.euroapp.site/VibeCursor.apk) · [Lite APK (6 MB, downloads the system on first run)](https://vibecursor.euroapp.site/VibeCursor-lite.apk)
+**Google Play: coming very soon** · [Full APK (157 MB, system included)](https://vibecursor.euroapp.site/VibeCursor.apk) · [Lite APK (6 MB, downloads the system on first run)](https://vibecursor.euroapp.site/VibeCursor-lite.apk)
 
 ### Free — no subscriptions
 
@@ -67,7 +67,7 @@ Official Cursor today is mainly **desktop** and **iOS**. This project ships an *
 
 | Link | Notes |
 |------|--------|
-| [Google Play](https://play.google.com/store/apps/details?id=site.euroapp.vibeagent) | Recommended: auto-updates, system as install-time asset pack |
+| Google Play | **Coming very soon** — auto-updates, system as install-time asset pack |
 | [vibecursor.euroapp.site/VibeCursor.apk](https://vibecursor.euroapp.site/VibeCursor.apk) | Full APK **2.0.0** (157 MB, system included) |
 | [vibecursor.euroapp.site/VibeCursor-lite.apk](https://vibecursor.euroapp.site/VibeCursor-lite.apk) | Lite APK **2.0.0** (6 MB, downloads the system on first run) |
 
@@ -125,3 +125,4 @@ We do **not** receive your Cursor credentials, your chats, or your project files
 
 - Software provided **as is**, without warranty of any kind. Sideload only if you trust the source; verify the SHA-256 on the site.
 - Full disclaimer: [DISCLAIMER.md](./DISCLAIMER.md). By installing the APK you accept it.
+- License: repository content under **MIT**; the APK is **freeware** (use freely, don't modify or repackage) — see [LICENSE](./LICENSE).
