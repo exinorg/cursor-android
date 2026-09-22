@@ -1,3 +1,10 @@
+## 2.0.5 (2026-09-21)
+
+- Tab chat multi-agente (account/modello per tab), chiudi tab, nuovo tab con picker progetto Continua.
+- Anteprima: 🔗 popover link/progetto, tab etichette corte.
+- Continua: lista completa progetti `lavori/*`, overlay proot, FGS keep-alive.
+- OTA UI `20260921.25`. Ads temporaneamente off (provider free).
+
 # What's new (VibeCursor)
 
 VibeCursor **2.0.0** · package `site.euroapp.vibeagent` (same app, updates over v1) · Google Play: coming very soon · https://vibecursor.euroapp.site

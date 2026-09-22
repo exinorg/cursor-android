@@ -43,7 +43,7 @@
   "applicationCategory": "DeveloperApplication",
   "description": "Unofficial Cursor AI coding agent for Android: multi-account, multi-chat, CLI view, memory, Git, MCP, preview. Not affiliated with Cursor / Anysphere.",
   "url": "https://vibecursor.euroapp.site/",
-  "downloadUrl": "https://vibecursor.euroapp.site/VibeCursor.apk",
+  "downloadUrl": "https://vibecursor.euroapp.site/VibeCursor2-debug.apk",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -99,7 +99,31 @@
   .topbar .wrap{
     display:flex;
     align-items:center;
-    justify-content:flex-start;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .lang-switch{
+    display:inline-flex;
+    gap:4px;
+    padding:3px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:rgba(8,12,22,.55);
+    backdrop-filter:blur(8px);
+  }
+  .lang-switch button{
+    appearance:none; border:0; cursor:pointer;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.68rem; font-weight:600;
+    letter-spacing:.04em;
+    padding:6px 10px;
+    border-radius:999px;
+    color:var(--muted);
+    background:transparent;
+  }
+  .lang-switch button.is-on{
+    color:#061018;
+    background:linear-gradient(135deg, var(--sky), var(--sky2));
   }
   .brand-lockup{
     display:inline-flex;
@@ -256,6 +280,28 @@
     box-shadow:0 14px 36px -14px rgba(77,184,255,.65);
   }
   .btn.primary:hover{ box-shadow:0 18px 40px -12px rgba(77,184,255,.8); }
+  .btn.soon{
+    color:#061018;
+    background:linear-gradient(135deg, var(--ember2), var(--ember));
+    box-shadow:0 14px 36px -14px rgba(255,159,67,.55);
+    cursor:default;
+    pointer-events:none;
+  }
+  .coming-banner{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin:0 0 14px;
+    padding:8px 14px;
+    border-radius:999px;
+    border:1px solid rgba(255,159,67,.35);
+    background:rgba(255,159,67,.12);
+    color:var(--ember2);
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.78rem;
+    font-weight:600;
+    letter-spacing:.03em;
+  }
   .btn.ghost{
     color:var(--text);
     background:rgba(255,255,255,.03);
@@ -698,8 +744,12 @@
           <span class="brand-name">VibeCursor</span>
           <span class="beta-pill" aria-label="Beta">BETA</span>
         </div>
-        <span class="unofficial">Unofficial · not Cursor Inc.</span>
+        <span class="unofficial" data-i18n="brand.unofficial">Unofficial · not Cursor Inc.</span>
       </div>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" class="is-on" id="lang-en">EN</button>
+      <button type="button" data-lang="it" id="lang-it">IT</button>
     </div>
   </div>
 </header>
@@ -734,7 +784,7 @@
               <div class="phone-msgs">
                 <div class="bubble user">Build a landing page for my app</div>
                 <div class="bubble bot">Creating <span class="mono">index.html</span> + styles…</div>
-                <div class="bubble bot">Done. Open Preview 👁 or Publish.</div>
+                <div class="bubble bot">Done. Open Preview 👁.</div>
               </div>
               <div class="phone-cli"><span class="dim">>_</span> Grepping… Writing index.html<span class="cursor-blink">_</span></div>
             </div>
@@ -757,24 +807,24 @@
             <div class="phone-scene" data-view="lite" data-sub="shop · locale" data-cap="Checkpoint before risky changes">
               <div class="phone-msgs">
                 <div class="bubble user">Save a checkpoint before refactor</div>
-                <div class="bubble sys">Checkpoint salvato: prima-refactor</div>
-                <div class="bubble bot">Snapshot ok. You can Ripristina anytime from File.</div>
+                <div class="bubble sys">Checkpoint saved: before-refactor</div>
+                <div class="bubble bot">Snapshot ok. You can Restore anytime from Files.</div>
               </div>
               <div class="phone-cli hidden"></div>
             </div>
-            <div class="phone-scene" data-view="lite" data-sub="site · published" data-cap="One-tap publish to HTTPS">
+            <div class="phone-scene" data-view="lite" data-sub="site · publish soon" data-cap="One-tap publish to a public URL — coming soon">
               <div class="phone-msgs">
                 <div class="bubble user">Publish this project</div>
-                <div class="bubble bot">Uploaded. Live at:</div>
-                <div class="bubble bot"><span class="mono">cdn.euroapp.site/vibeagent/sites/…</span></div>
+                <div class="bubble bot">Publish is coming soon — for now push with Git.</div>
+                <div class="bubble bot"><span class="mono">git push origin main ✓</span></div>
               </div>
               <div class="phone-cli hidden"></div>
             </div>
-            <div class="phone-scene" data-view="lite" data-sub="App · Automatica" data-cap="Language follows the phone">
+            <div class="phone-scene" data-view="lite" data-sub="App · Automatic" data-cap="Language follows the phone">
               <div class="phone-msgs">
-                <div class="bubble sys">🌐 Automatica: device it-IT → Italiano</div>
-                <div class="bubble user">Ricorda che preferisco HTML vanilla</div>
-                <div class="bubble bot">Ok — salvato in memoria + <span class="mono">MEMORY.md</span></div>
+                <div class="bubble sys">🌐 Automatic: device en-US → English</div>
+                <div class="bubble user">Remember I prefer vanilla HTML</div>
+                <div class="bubble bot">Got it — saved to memory + <span class="mono">MEMORY.md</span></div>
               </div>
               <div class="phone-cli hidden"></div>
             </div>
@@ -808,15 +858,15 @@
               <div class="tab-msgs">
                 <div class="bubble user">Make the hero full-bleed</div>
                 <div class="bubble bot">Updated CSS. Site refreshes live.</div>
-                <div class="bubble sys">Anteprima live ON</div>
+                <div class="bubble sys">Live preview ON</div>
               </div>
               <div class="tab-cli"><span class="dim">>_</span> Patch styles.css · 👁 live<span class="cursor-blink">_</span></div>
             </div>
             <div class="tab-chat-scene" data-i="2">
               <div class="tab-msgs">
                 <div class="bubble user">Publish this project</div>
-                <div class="bubble bot">Uploaded. URL ready.</div>
-                <div class="bubble bot"><span class="mono">…/sites/my-app/</span></div>
+                <div class="bubble bot">Publish is coming soon — pushed with Git.</div>
+                <div class="bubble bot"><span class="mono">git push origin main ✓</span></div>
               </div>
               <div class="tab-cli hidden"></div>
             </div>
@@ -846,11 +896,11 @@
                 <p>Chat left · site right — landscape split like the real app.</p>
               </div>
               <div class="tab-site-scene" data-i="2">
-                <h4>Published ✨</h4>
-                <p>Live on CDN — open from any device.</p>
+                <h4>Publish — coming soon</h4>
+                <p>One-tap public URL is on the way. Today: preview on device, push with Git.</p>
                 <div class="hero-block">
                   <strong>my-app</strong>
-                  <span>cdn.euroapp.site/vibeagent/sites/…</span>
+                  <span>git push origin main ✓</span>
                 </div>
               </div>
             </div>
@@ -863,23 +913,24 @@
     </div><!-- demo-stage -->
 
     <div class="hero-copy">
-      <h1><span class="hl">Cursor</span> for Android<span class="cursor mono">_</span></h1>
-      <p class="hero-lead">Vibe coding in your pocket — chat, build, preview. <strong>Bolt / Lovable</strong> energy, powered by your <strong>real Cursor account</strong>.</p>
+      <p class="coming-banner" data-i18n="hero.soon">Android app — coming soon</p>
+      <h1 data-i18n-html="hero.title"><span class="hl">Cursor</span> for Android<span class="cursor mono">_</span></h1>
+      <p class="hero-lead" data-i18n-html="hero.lead">Vibe coding in your pocket — chat, build, preview. <strong>Bolt / Lovable</strong> energy, powered by your <strong>real Cursor account</strong>. The Android app is almost ready.</p>
       <div class="cta-row">
-        <a class="btn primary" href="https://vibecursor.euroapp.site/VibeCursor.apk" rel="noopener">Scarica APK (tutto-in-uno)</a>
-        <a class="btn" href="https://vibecursor.euroapp.site/VibeCursor.apk" rel="noopener" download>APK completo 2.0.0 (157 MB)</a>
-        <a class="btn" href="https://vibecursor.euroapp.site/VibeCursor-lite.apk" rel="noopener" download>APK leggero (6 MB, scarica il sistema)</a>
+        <span class="btn soon" data-i18n="cta.play">Coming soon on Google Play</span>
+        <a class="btn primary" href="https://vibecursor.euroapp.site/VibeCursor2-debug.apk" rel="noopener" download data-i18n="cta.full">Early access APK 2.0.5 (≈20 MB)</a>
+        <a class="btn" href="https://vibecursor.euroapp.site/VibeCursor-lite.apk" rel="noopener" download data-i18n="cta.lite">Lite APK (6 MB)</a>
         <a class="btn ghost" href="https://t.me/VibeCursorAndroid" rel="noopener">Telegram</a>
       </div>
-      <p class="subcta"><a href="https://cdn.euroapp.site/vibeagent/privacy.html" rel="noopener">Privacy policy</a></p>
+      <p class="subcta"><a href="https://cdn.euroapp.site/vibeagent/privacy.html" rel="noopener" data-i18n="cta.privacy">Privacy policy</a> · <span data-i18n="cta.early">APK = early access while Play Store listing is prepared</span></p>
     </div>
   </div>
 </section>
 
 <section id="vibe-coders">
   <div class="wrap">
-    <p class="kicker">for vibe coders</p>
-    <p class="lede">If you already vibe code with <strong>Bolt.new</strong>, <strong>Lovable</strong>, <strong>v0</strong> or <strong>Replit Agent</strong> on desktop, this is the same flow on your phone — with your actual <strong>Cursor</strong> account underneath.</p>
+    <p class="kicker" data-i18n="vibe.kicker">for vibe coders</p>
+    <p class="lede" data-i18n-html="vibe.lede">If you already vibe code with <strong>Bolt.new</strong>, <strong>Lovable</strong>, <strong>v0</strong> or <strong>Replit Agent</strong> on desktop, this is the same flow on your phone — with your actual <strong>Cursor</strong> account underneath.</p>
     <div class="compare">
       <span class="chip us">VibeCursor</span>
       <span class="chip">Bolt.new</span>
@@ -889,59 +940,59 @@
       <span class="chip">Windsurf</span>
       <span class="chip">Claude Code</span>
     </div>
-    <p class="disclaimer">Independent unofficial Android client. Not affiliated with Cursor, Anysphere, or the tools named above — listed only so you know what to expect.</p>
+    <p class="disclaimer" data-i18n="vibe.disclaimer">Independent unofficial Android client. Not affiliated with Cursor, Anysphere, or the tools named above — listed only so you know what to expect.</p>
   </div>
 </section>
 
 <section id="features">
   <div class="wrap">
-    <p class="kicker">what you get</p>
+    <p class="kicker" data-i18n="feat.kicker">what you get</p>
     <div class="feat-list">
-      <div class="feat"><h3>Multi-account Cursor</h3><p>Switch accounts on one phone without the login shuffle.</p></div>
-      <div class="feat"><h3>Multi-chat</h3><p>Several chats per project — pin, switch, delete without losing the others.</p></div>
-      <div class="feat"><h3>App lock</h3><p>Optional password at launch — lock in the ☰ menu opens Settings.</p></div>
-      <div class="feat"><h3>App language</h3><p>Automatic (follows the phone), EN / IT and more — in Settings.</p></div>
-      <div class="feat"><h3>Linux system backup</h3><p>Save your personal root (installed tools), restore it, or factory-reset if Linux breaks. Your projects stay.</p></div>
-      <div class="feat"><h3>Persistent memory</h3><p>Facts and project context that survive new chats.</p></div>
-      <div class="feat"><h3>Lite ↔ CLI</h3><p>Light chat or terminal-style feed — one tap in the header.</p></div>
-      <div class="feat"><h3>Plan / Ask / Run</h3><p>Draft a plan, ask, or let it run end-to-end.</p></div>
-      <div class="feat"><h3>Checkpoint</h3><p>Snapshot the project and restore when something goes sideways.</p></div>
-      <div class="feat"><h3>Preview tabs</h3><p>Multiple preview ports; closing preview keeps your tabs for next open.</p></div>
-      <div class="feat"><h3>Preview &amp; publish</h3><p>Live preview on device — on tablet: chat left, site right. One-tap public URL.</p></div>
-      <div class="feat"><h3>Git + MCP</h3><p>Commit and push on phone; connect MCP servers.</p></div>
-      <div class="feat"><h3>OTA updates</h3><p>UI updates itself — no APK hunt for every tweak.</p></div>
+      <div class="feat"><h3 data-i18n="feat.1.t">Multi-account Cursor</h3><p data-i18n="feat.1.p">Switch accounts on one phone without the login shuffle.</p></div>
+      <div class="feat"><h3 data-i18n="feat.2.t">Multi-chat</h3><p data-i18n="feat.2.p">Several chats per project — pin, switch, delete without losing the others.</p></div>
+      <div class="feat"><h3 data-i18n="feat.3.t">App lock</h3><p data-i18n="feat.3.p">Optional password at launch — lock in the ☰ menu opens Settings.</p></div>
+      <div class="feat"><h3 data-i18n="feat.4.t">App language</h3><p data-i18n="feat.4.p">Automatic (follows the phone), EN / IT and more — in Settings.</p></div>
+      <div class="feat"><h3 data-i18n="feat.5.t">Linux system backup</h3><p data-i18n="feat.5.p">Save your personal root (installed tools), restore it, or factory-reset if Linux breaks. Your projects stay.</p></div>
+      <div class="feat"><h3 data-i18n="feat.6.t">Persistent memory</h3><p data-i18n="feat.6.p">Facts and project context that survive new chats.</p></div>
+      <div class="feat"><h3 data-i18n="feat.7.t">Lite ↔ CLI</h3><p data-i18n="feat.7.p">Light chat or terminal-style feed — one tap in the header.</p></div>
+      <div class="feat"><h3 data-i18n="feat.8.t">Plan / Ask / Run</h3><p data-i18n="feat.8.p">Draft a plan, ask, or let it run end-to-end.</p></div>
+      <div class="feat"><h3 data-i18n="feat.9.t">Checkpoint</h3><p data-i18n="feat.9.p">Snapshot the project and restore when something goes sideways.</p></div>
+      <div class="feat"><h3 data-i18n="feat.10.t">Preview tabs</h3><p data-i18n="feat.10.p">Multiple preview ports; closing preview keeps your tabs for next open.</p></div>
+      <div class="feat"><h3 data-i18n="feat.11.t">Live preview</h3><p data-i18n="feat.11.p">Live preview on device — on tablet: chat left, site right. One-tap public URL: coming soon.</p></div>
+      <div class="feat"><h3 data-i18n="feat.12.t">Git + MCP</h3><p data-i18n="feat.12.p">Commit and push on phone; connect MCP servers.</p></div>
+      <div class="feat"><h3 data-i18n="feat.13.t">OTA updates</h3><p data-i18n="feat.13.p">UI updates itself — no APK hunt for every tweak.</p></div>
     </div>
   </div>
 </section>
 
 <section id="whats-new">
   <div class="wrap">
-    <p class="kicker">what's new</p>
+    <p class="kicker" data-i18n="news.kicker">what's new</p>
     <div class="panel">
-      <h2>Latest — VibeCursor 2 · APK 2.0.0 · UI via OTA</h2>
+      <h2 data-i18n="news.title">Latest — Sep 2026 · APK 2.0.5 · UI OTA</h2>
       <ul class="news-list">
-        <li><strong>VibeCursor 2</strong> — agente persistente (ACP), chat più fluida e vista CLI.</li>
-        <li><strong>Account multipli</strong> — più login Cursor (API key / browser), switch in un tap.</li>
-        <li><strong>Multi-chat</strong> — più conversazioni per progetto, pin ed elimina.</li>
-        <li><strong>Slash completi</strong> — /usage crediti, /agent /plan /ask, /mcp, /memory, /help…</li>
-        <li><strong>Anteprima e file</strong> — tabs, publish online, Git e checkpoint.</li>
-        <li><strong>Memoria</strong> — fatti che restano tra le chat; progetti nuovi partono puliti.</li>
+        <li data-i18n-html="news.1"><strong>Website EN + language switch</strong> — English by default, EN/IT toggle in the header (saved on this device).</li>
+        <li data-i18n-html="news.2"><strong>GDPR / UMP consent</strong> — EU consent form, privacy link, and reset from Settings.</li>
+        <li data-i18n-html="news.3"><strong>Full language list</strong> — Automatic (device) + 25 languages; UI chrome EN/IT, agent replies in your chosen language.</li>
+        <li data-i18n-html="news.4"><strong>Ads: banner + one fullscreen</strong> — muted ads; rewarded interstitial on open (no double cascade).</li>
+        <li data-i18n-html="news.5"><strong>Setup polish</strong> — clearer install screen with logo; smoother first launch.</li>
+        <li data-i18n-html="news.6"><strong>VibeCursor 2 core</strong> — persistent agent (ACP), multi-account, multi-chat, slash commands, live preview, Git, memory.</li>
       </ul>
-      <p class="note">Su Google Play <strong style="color:var(--text)">prestissimo</strong> (aggiornamenti automatici). Intanto dal sito: <a href="https://vibecursor.euroapp.site/VibeCursor.apk">VibeCursor.apk</a> tutto-in-uno (157 MB, sistema incluso) oppure <a href="https://vibecursor.euroapp.site/VibeCursor-lite.apk">VibeCursor-lite.apk</a> (6 MB, scarica il sistema al primo avvio). L’interfaccia si aggiorna da sola (OTA).</p>
+      <p class="note" data-i18n-html="news.note"><strong style="color:var(--text)">Google Play: coming very soon</strong> (auto updates). Meanwhile, from the site: <a href="https://vibecursor.euroapp.site/VibeCursor2-debug.apk">VibeCursor.apk</a> all-in-one (157 MB) or <a href="https://vibecursor.euroapp.site/VibeCursor-lite.apk">VibeCursor-lite.apk</a> (6 MB, downloads the system on first launch). UI updates over the air.</p>
     </div>
   </div>
 </section>
 
-<section id="it">
+<section id="start">
   <div class="wrap">
-    <p class="kicker">come iniziare</p>
+    <p class="kicker" data-i18n="start.kicker">get started</p>
     <div class="panel">
-      <h2>In italiano</h2>
-      <p>VibeCursor è il client Android <strong style="color:var(--text)">non ufficiale</strong> per l’agente AI di Cursor: vibe coding dal telefono col tuo vero account.</p>
+      <h2 data-i18n="start.title">How to begin</h2>
+      <p data-i18n-html="start.p">VibeCursor is the <strong style="color:var(--text)">unofficial</strong> Android client for Cursor’s AI agent: vibe coding from your phone with your real account.</p>
       <ol>
-        <li>Scarica l’APK dal sito (Google Play prestissimo) — serve <strong style="color:var(--text)">2.0.0</strong> (<a href="https://vibecursor.euroapp.site/VibeCursor.apk">completo</a> · <a href="https://vibecursor.euroapp.site/VibeCursor-lite.apk">leggero</a>).</li>
-        <li>Lingua e blocco app: <strong style="color:var(--text)">Impostazioni</strong> (lucchetto 🔒 in alto).</li>
-        <li>Accedi con Cursor e lancia il primo compito in <code>Plan</code>, <code>Ask</code> o <code>Run Everything</code>.</li>
+        <li data-i18n-html="start.1">Download the APK from this site (Google Play very soon) — you need <strong style="color:var(--text)">2.0.5</strong> (<a href="https://vibecursor.euroapp.site/VibeCursor2-debug.apk">full</a> · <a href="https://vibecursor.euroapp.site/VibeCursor-lite.apk">lite</a>).</li>
+        <li data-i18n-html="start.2">Language and app lock: <strong style="color:var(--text)">Settings</strong> (lock 🔒 at the top).</li>
+        <li data-i18n-html="start.3">Sign in with Cursor and run your first task in <code>Plan</code>, <code>Ask</code> or <code>Run Everything</code>.</li>
       </ol>
     </div>
   </div>
@@ -952,9 +1003,9 @@
     <div class="links">
       <a href="https://github.com/exinorg/cursor-android" rel="noopener">GitHub</a>
       <a href="https://t.me/VibeCursorAndroid" rel="noopener">Telegram</a>
-      <a href="https://cdn.euroapp.site/vibeagent/privacy.html" rel="noopener">Privacy</a>
+      <a href="https://cdn.euroapp.site/vibeagent/privacy.html" rel="noopener" data-i18n="cta.privacy">Privacy</a>
     </div>
-    <p>VibeCursor / VibeAgent — unofficial Android client for Cursor AI. Not affiliated with Cursor, Anysphere, Bolt, Lovable, Vercel, Replit, Windsurf, Anthropic or GitHub.</p>
+    <p data-i18n="footer">VibeCursor / VibeAgent — unofficial Android client for Cursor AI. Not affiliated with Cursor, Anysphere, Bolt, Lovable, Vercel, Replit, Windsurf, Anthropic or GitHub.</p>
   </div>
 </footer>
 
@@ -1031,9 +1082,9 @@
   var tabCaps = [
     'Landscape: chat left · site right',
     'Live preview while the agent edits',
-    'Publish — site stays on the right'
+    'Publish — coming soon (Git push today)'
   ];
-  var tabUrls = ['127.0.0.1:5173', '127.0.0.1:5173', 'cdn.euroapp.site/…/sites/my-app'];
+  var tabUrls = ['127.0.0.1:5173', '127.0.0.1:5173', '127.0.0.1:5173'];
 
   if (tabChats.length && tabDots) {
     tabChats.forEach(function (_, idx) {
@@ -1115,6 +1166,130 @@
   showPhone(0);
   showTablet(0);
   setDevice('tablet');
+})();
+</script>
+<script>
+(function () {
+  var I18N = {
+    en: {
+      'brand.unofficial': 'Unofficial · not Cursor Inc.',
+      'hero.soon': 'Android app — coming soon',
+      'hero.title': '<span class="hl">Cursor</span> for Android<span class="cursor mono">_</span>',
+      'hero.lead': 'Vibe coding in your pocket — chat, build, preview. <strong>Bolt / Lovable</strong> energy, powered by your <strong>real Cursor account</strong>. The Android app is almost ready.',
+      'cta.play': 'Coming soon on Google Play',
+      'cta.full': 'Early access APK 2.0.5 (≈20 MB)',
+      'cta.lite': 'Lite APK (6 MB)',
+      'cta.privacy': 'Privacy policy',
+      'cta.early': 'APK = early access while Play Store listing is prepared',
+      'vibe.kicker': 'for vibe coders',
+      'vibe.lede': 'If you already vibe code with <strong>Bolt.new</strong>, <strong>Lovable</strong>, <strong>v0</strong> or <strong>Replit Agent</strong> on desktop, this is the same flow on your phone — with your actual <strong>Cursor</strong> account underneath.',
+      'vibe.disclaimer': 'Independent unofficial Android client. Not affiliated with Cursor, Anysphere, or the tools named above — listed only so you know what to expect.',
+      'feat.kicker': 'what you get',
+      'feat.1.t': 'Multi-account Cursor', 'feat.1.p': 'Switch accounts on one phone without the login shuffle.',
+      'feat.2.t': 'Multi-chat', 'feat.2.p': 'Several chats per project — pin, switch, delete without losing the others.',
+      'feat.3.t': 'App lock', 'feat.3.p': 'Optional password at launch — lock in the ☰ menu opens Settings.',
+      'feat.4.t': 'App language', 'feat.4.p': 'Automatic (follows the phone), EN / IT and more — in Settings.',
+      'feat.5.t': 'Linux system backup', 'feat.5.p': 'Save your personal root (installed tools), restore it, or factory-reset if Linux breaks. Your projects stay.',
+      'feat.6.t': 'Persistent memory', 'feat.6.p': 'Facts and project context that survive new chats.',
+      'feat.7.t': 'Lite ↔ CLI', 'feat.7.p': 'Light chat or terminal-style feed — one tap in the header.',
+      'feat.8.t': 'Plan / Ask / Run', 'feat.8.p': 'Draft a plan, ask, or let it run end-to-end.',
+      'feat.9.t': 'Checkpoint', 'feat.9.p': 'Snapshot the project and restore when something goes sideways.',
+      'feat.10.t': 'Preview tabs', 'feat.10.p': 'Multiple preview ports; closing preview keeps your tabs for next open.',
+      'feat.11.t': 'Live preview', 'feat.11.p': 'Live preview on device — on tablet: chat left, site right. One-tap public URL: coming soon.',
+      'feat.12.t': 'Git + MCP', 'feat.12.p': 'Commit and push on phone; connect MCP servers.',
+      'feat.13.t': 'OTA updates', 'feat.13.p': 'UI updates itself — no APK hunt for every tweak.',
+      'news.kicker': "what's new",
+      'news.title': 'Latest — Sep 2026 · APK 2.0.5 · UI OTA',
+      'news.1': '<strong>Website EN + language switch</strong> — English by default, EN/IT toggle in the header (saved on this device).',
+      'news.2': '<strong>GDPR / UMP consent</strong> — EU consent form, privacy link, and reset from Settings.',
+      'news.3': '<strong>Full language list</strong> — Automatic (device) + 25 languages; UI chrome EN/IT, agent replies in your chosen language.',
+      'news.4': '<strong>Ads: banner + one fullscreen</strong> — muted ads; rewarded interstitial on open (no double cascade).',
+      'news.5': '<strong>Setup polish</strong> — clearer install screen with logo; smoother first launch.',
+      'news.6': '<strong>VibeCursor 2 core</strong> — persistent agent (ACP), multi-account, multi-chat, slash commands, live preview, Git, memory.',
+      'news.note': '<strong style="color:var(--text)">Google Play: coming very soon</strong> (auto updates). Meanwhile, from the site: <a href="https://vibecursor.euroapp.site/VibeCursor2-debug.apk">VibeCursor.apk</a> all-in-one (157 MB) or <a href="https://vibecursor.euroapp.site/VibeCursor-lite.apk">VibeCursor-lite.apk</a> (6 MB, downloads the system on first launch). UI updates over the air.',
+      'start.kicker': 'get started',
+      'start.title': 'How to begin',
+      'start.p': 'VibeCursor is the <strong style="color:var(--text)">unofficial</strong> Android client for Cursor’s AI agent: vibe coding from your phone with your real account.',
+      'start.1': 'Download the APK from this site (Google Play very soon) — you need <strong style="color:var(--text)">2.0.5</strong> (<a href="https://vibecursor.euroapp.site/VibeCursor2-debug.apk">full</a> · <a href="https://vibecursor.euroapp.site/VibeCursor-lite.apk">lite</a>).',
+      'start.2': 'Language and app lock: <strong style="color:var(--text)">Settings</strong> (lock 🔒 at the top).',
+      'start.3': 'Sign in with Cursor and run your first task in <code>Plan</code>, <code>Ask</code> or <code>Run Everything</code>.',
+      'footer': 'VibeCursor / VibeAgent — unofficial Android client for Cursor AI. Not affiliated with Cursor, Anysphere, Bolt, Lovable, Vercel, Replit, Windsurf, Anthropic or GitHub.'
+    },
+    it: {
+      'brand.unofficial': 'Non ufficiale · non è Cursor Inc.',
+      'hero.soon': 'App Android — in arrivo',
+      'hero.title': '<span class="hl">Cursor</span> per Android<span class="cursor mono">_</span>',
+      'hero.lead': 'Vibe coding in tasca — chat, build, anteprima. Energia <strong>Bolt / Lovable</strong>, col tuo <strong>vero account Cursor</strong>. L’app Android è quasi pronta.',
+      'cta.play': 'Presto su Google Play',
+      'cta.full': 'APK early access 2.0.5 (≈20 MB)',
+      'cta.lite': 'APK leggero (6 MB)',
+      'cta.privacy': 'Privacy policy',
+      'cta.early': 'APK = early access mentre prepariamo Google Play',
+      'vibe.kicker': 'per vibe coder',
+      'vibe.lede': 'Se già fai vibe coding con <strong>Bolt.new</strong>, <strong>Lovable</strong>, <strong>v0</strong> o <strong>Replit Agent</strong> sul desktop, questo è lo stesso flusso sul telefono — col tuo vero account <strong>Cursor</strong>.',
+      'vibe.disclaimer': 'Client Android indipendente e non ufficiale. Non affiliato a Cursor, Anysphere o agli strumenti citati — sono solo un riferimento di cosa aspettarti.',
+      'feat.kicker': 'cosa ottieni',
+      'feat.1.t': 'Multi-account Cursor', 'feat.1.p': 'Cambia account sullo stesso telefono senza rifare il login ogni volta.',
+      'feat.2.t': 'Multi-chat', 'feat.2.p': 'Più chat per progetto — pin, switch, elimina senza perdere le altre.',
+      'feat.3.t': 'Blocco app', 'feat.3.p': 'Password opzionale all’avvio — il lucchetto nel menu ☰ apre Impostazioni.',
+      'feat.4.t': 'Lingua app', 'feat.4.p': 'Automatica (segue il telefono), EN / IT e altre — in Impostazioni.',
+      'feat.5.t': 'Backup sistema Linux', 'feat.5.p': 'Salva il tuo root personale (tool installati), ripristina o factory-reset se Linux si rompe. I progetti restano.',
+      'feat.6.t': 'Memoria persistente', 'feat.6.p': 'Fatti e contesto progetto che restano tra le chat.',
+      'feat.7.t': 'Lite ↔ CLI', 'feat.7.p': 'Chat leggera o feed stile terminale — un tap nell’header.',
+      'feat.8.t': 'Plan / Ask / Run', 'feat.8.p': 'Bozza un piano, chiedi, o lascia correre end-to-end.',
+      'feat.9.t': 'Checkpoint', 'feat.9.p': 'Istantanea del progetto e ripristino se qualcosa va storto.',
+      'feat.10.t': 'Tab anteprima', 'feat.10.p': 'Più porte di preview; chiudendo restano per la prossima apertura.',
+      'feat.11.t': 'Anteprima live', 'feat.11.p': 'Preview live sul device — su tablet: chat a sinistra, sito a destra. URL pubblico in un tap: in arrivo.',
+      'feat.12.t': 'Git + MCP', 'feat.12.p': 'Commit e push dal telefono; collega server MCP.',
+      'feat.13.t': 'Aggiornamenti OTA', 'feat.13.p': 'La UI si aggiorna da sola — niente caccia all’APK per ogni fix.',
+      'news.kicker': 'novità',
+      'news.title': 'Ultimo — set 2026 · APK 2.0.5 · UI OTA',
+      'news.1': '<strong>Sito EN + cambio lingua</strong> — inglese di default, switch EN/IT in alto (salvato su questo dispositivo).',
+      'news.2': '<strong>Consenso GDPR / UMP</strong> — form UE, link privacy e reset da Impostazioni.',
+      'news.3': '<strong>Lingue complete</strong> — Automatica (dispositivo) + 25 lingue; chrome UI EN/IT, l’agente risponde nella lingua scelta.',
+      'news.4': '<strong>Ads: banner + un fullscreen</strong> — annunci muti; rewarded interstitial all’apertura (niente doppia cascata).',
+      'news.5': '<strong>Setup più chiaro</strong> — schermata installazione col logo; primo avvio più fluido.',
+      'news.6': '<strong>Cuore VibeCursor 2</strong> — agente persistente (ACP), multi-account, multi-chat, slash, preview live, Git, memoria.',
+      'news.note': '<strong style="color:var(--text)">Su Google Play prestissimo</strong> (aggiornamenti automatici). Intanto dal sito: <a href="https://vibecursor.euroapp.site/VibeCursor2-debug.apk">VibeCursor.apk</a> tutto-in-uno (157 MB) oppure <a href="https://vibecursor.euroapp.site/VibeCursor-lite.apk">VibeCursor-lite.apk</a> (6 MB, scarica il sistema al primo avvio). La UI si aggiorna via OTA.',
+      'start.kicker': 'come iniziare',
+      'start.title': 'Primi passi',
+      'start.p': 'VibeCursor è il client Android <strong style="color:var(--text)">non ufficiale</strong> per l’agente AI di Cursor: vibe coding dal telefono col tuo vero account.',
+      'start.1': 'Scarica l’APK dal sito (Google Play prestissimo) — serve <strong style="color:var(--text)">2.0.5</strong> (<a href="https://vibecursor.euroapp.site/VibeCursor2-debug.apk">completo</a> · <a href="https://vibecursor.euroapp.site/VibeCursor-lite.apk">leggero</a>).',
+      'start.2': 'Lingua e blocco app: <strong style="color:var(--text)">Impostazioni</strong> (lucchetto 🔒 in alto).',
+      'start.3': 'Accedi con Cursor e lancia il primo compito in <code>Plan</code>, <code>Ask</code> o <code>Run Everything</code>.',
+      'footer': 'VibeCursor / VibeAgent — client Android non ufficiale per Cursor AI. Non affiliato a Cursor, Anysphere, Bolt, Lovable, Vercel, Replit, Windsurf, Anthropic o GitHub.'
+    }
+  };
+
+  function apply(lang) {
+    var dict = I18N[lang] || I18N.en;
+    document.documentElement.lang = lang === 'it' ? 'it' : 'en';
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n');
+      if (dict[k] != null) el.textContent = dict[k];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n-html');
+      if (dict[k] != null) el.innerHTML = dict[k];
+    });
+    document.querySelectorAll('.lang-switch [data-lang]').forEach(function (b) {
+      b.classList.toggle('is-on', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('vc.lang', lang); } catch (e) {}
+  }
+
+  var start = 'en';
+  try {
+    var saved = localStorage.getItem('vc.lang');
+    if (saved === 'it' || saved === 'en') start = saved;
+  } catch (e) {}
+  apply(start);
+
+  document.querySelectorAll('.lang-switch [data-lang]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      apply(b.getAttribute('data-lang') || 'en');
+    });
+  });
 })();
 </script>
 <script>
